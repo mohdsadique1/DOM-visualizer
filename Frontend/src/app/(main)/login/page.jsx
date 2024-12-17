@@ -5,7 +5,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-const login = () => {
+const Login = () => {
 
   const router = useRouter();
 
@@ -126,6 +126,9 @@ const login = () => {
            >
              Register
            </a>
+           <Link href="/Signup" className="text-teal-500 hover:underline">
+                Create account
+              </Link>
          </p>
        </div>
      </form>
@@ -135,4 +138,4 @@ const login = () => {
   )
 }
 
-export default login;
+export default Login;

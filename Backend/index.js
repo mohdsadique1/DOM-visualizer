@@ -1,7 +1,7 @@
 // importing express
 const express = require('express');
 const UserRouter = require('./routers/userRouter');
-const PageRouter = require('./routers/pageRouter');
+const PageRouter = require('./routers/domRouter');
 
 const cors = require('cors');
 
