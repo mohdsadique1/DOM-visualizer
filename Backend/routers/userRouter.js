@@ -93,7 +93,7 @@ router.post('/authenticate', (req, res) => {
                 jwt.sign(
                     payload,
                     process.env.JWT_SECRET,
-                    { expiresIn: 60 },
+                    { expiresIn: '2 days' },
                     (err, token) => {
                         if (err) {
                             console.log(err);

@@ -1,10 +1,10 @@
-const { model, Schema, } = require('../connection');
+const { model, Schema, Types } = require('../connection');
 
 const mySchema = new Schema({
-    user: String,
-    dom: String,
-    title: String,
-    Link: { type: String, unique: false },
+    user: { type: Types.ObjectId, ref: 'user' },
+    code: { type: String, default: '' },
+    title: { type: String, require: true },
+    url: { type: String, default: '' },
     createdAt: { type: Date, default: Date.now }
 });
 

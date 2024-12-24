@@ -2,61 +2,987 @@ import Link from 'next/link';
 import React from 'react'
 
 const Home = () => {
+
   return (
-    <div>
-    <>
-{/* Hero */}
-<div className="relative overflow-hidden">
-<div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-  <div className="max-w-2xl text-center mx-auto">
-    <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl dark:text-white">
-      Designed for you to get more{" "}
-      <span className="text-blue-600">simple</span>
-    </h1>
-    <p className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
-      Build your business here. Take it anywhere.
-    </p>
-  </div>
-  <div className="mt-10 relative max-w-5xl mx-auto">
-    <div className="w-full object-cover h-96 sm:h-[480px] bg-[url('https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80')] bg-no-repeat bg-center bg-cover rounded-xl" />
-    <div className="absolute inset-0 size-full">
-      <div className="flex flex-col justify-center items-center size-full">
-        <a
-          className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-          href="#"
-        >
-          <svg
-            className="shrink-0 size-4"
-            xmlns="http://www.w3.org/2000/svg"
-            width={24}
-            height={24}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polygon points="5 3 19 12 5 21 5 3" />
-          </svg>
-          Play the overview
-        </a>
+
+        <div className="bg-pink-200 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+          <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
+            <div className="flex flex-col justify-center">
+              <div className="max-w-xl mb-6">
+                <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl sm:leading-none">
+                Dom Visualizer
+                  <span className="relative px-1">
+                    <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
+                  </span>
+                </h2>
+                <p className="text-base text-gray-700 md:text-xl">
+                A DOM visualizer typically represents the DOM tree structure of a webpage in a graphical or interactive manner. It shows the hierarchy of HTML elements and their relationships, which can be helpful for debugging, learning about web structures, or improving the development process.
+                </p>
+              </div>
+              <p className="mb-4 text-sm font-bold tracking-widest uppercase">
+                Features
+              </p>
+              <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0">
+                <ul className="space-y-3">
+                  
+                  <li className="flex">
+                    <span className="mr-1">
+                      <svg
+                        className="w-5 h-5 mt-px text-deep-purple-accent-400"
+                        stroke="currentColor"
+                        viewBox="0 0 52 52"
+                      >
+                        <polygon
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          fill="none"
+                          points="29 13 14 29 25 29 23 39 38 23 27 23"
+                        />
+                      </svg>
+                    </span>
+                    Quickstart
+                  </li>
+                 
+                </ul>
+                <ul className="space-y-3">
+                  <li className="flex">
+                    <span className="mr-1">
+                      <svg
+                        className="w-5 h-5 mt-px text-deep-purple-accent-400"
+                        stroke="currentColor"
+                        viewBox="0 0 52 52"
+                      >
+                        <polygon
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          fill="none"
+                          points="29 13 14 29 25 29 23 39 38 23 27 23"
+                        />
+                      </svg>
+                    </span>
+                    React Flow Pro
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <img
+                className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
+                src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div class="grid grid-cols-2 row-gap-8 md:grid-cols-4">
+        <div class="text-center md:border-r">
+          <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">144K</h6>
+          <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+            Github Stars
+          </p>
+        </div>
+        <div class="text-center md:border-r">
+          <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">12.9K</h6>
+          <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+            Weekly Installs
+          </p>
+        </div>
+        <div class="text-center md:border-r">
+          <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">48.3K</h6>
+          <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+            License
+          </p>
+        </div>
+       <div>
+       <p className="text-base text-gray-700 md:text-2xl">
+       Use these modern JavaScript frameworks to build a more dynamic and user-friendly frontend.
+         </p>
+       </div>
       </div>
     </div>
-    <div className="absolute bottom-12 -start-20 -z-[1] size-48 bg-gradient-to-b from-orange-500 to-white p-px rounded-lg dark:to-neutral-900">
-      <div className="bg-white size-48 rounded-lg dark:bg-neutral-900" />
+    <img src="dsdv" alt="" />
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="grid gap-10 lg:grid-cols-2">
+        <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
+          <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400">
+            <svg className="text-teal-900 w-7 h-7" viewBox="0 0 24 24">
+              <polyline
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeMiterlimit="10"
+                points=" 8,5 8,1 16,1 16,5"
+                strokeLinejoin="round"
+              />
+              <polyline
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeMiterlimit="10"
+                points="9,15 1,15 1,5 23,5 23,15 15,15"
+                strokeLinejoin="round"
+              />
+              <polyline
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeMiterlimit="10"
+                points="22,18 22,23 2,23 2,18"
+                strokeLinejoin="round"
+              />
+              <rect
+                x="9"
+                y="13"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeMiterlimit="10"
+                width="6"
+                height="4"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+          <div className="max-w-xl mb-6">
+            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none">
+            Ready out-of-the-box
+            </h2>
+            <p className="text-base text-gray-700 md:text-lg">
+            The things you need are already there: dragging nodes, zooming, panning, selecting multiple nodes, and adding/removing elements are all built-in
+            </p>
+          </div>
+          <div>
+            <a
+              href="/"
+              aria-label=""
+              className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+            >
+              Get Started
+              <svg
+                className="inline-block w-3 ml-2"
+                fill="currentColor"
+                viewBox="0 0 12 12"
+              >
+                <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div className="flex items-center justify-center -mx-4 lg:pl-8">
+          <div className="flex flex-col items-end px-3">
+            <img
+              className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
+              src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              alt=""
+            />
+            <img
+              className="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
+              src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              alt=""
+            />
+          </div>
+          <div className="px-3">
+            <img
+              className="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
+              src="https://images.pexels.com/photos/3182739/pexels-photo-3182739.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
     </div>
-    <div className="absolute -top-12 -end-20 -z-[1] size-48 bg-gradient-to-t from-blue-600 to-cyan-400 p-px rounded-full">
-      <div className="bg-white size-48 rounded-full dark:bg-neutral-900" />
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="flex flex-col max-w-screen-lg overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto">
+        <div className="relative lg:w-1/2">
+          <img
+            src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+            alt=""
+            className="object-cover w-full lg:absolute h-80 lg:h-full"
+          />
+          
+        </div>
+        <div className="flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2">
+         
+          <h5 className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
+          Powered & Designed by mohd sadique
+          </h5>
+          <p className="mb-5 text-gray-800">
+            <span className="font-bold"></span>
+            Dom Visualizer nodes are simply React components, ready for your interactive elements. We play nice with Tailwind and plain old CSS.
+          </p>
+          <div className="flex items-center">
+           
+            <a
+              href="/"
+              aria-label=""
+              className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+            >
+              Custom Nodes Guide
+             
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</div>
-{/* End Hero */}
-</>
-
-   </div>
-  )
-}
-
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="max-w-lg sm:text-center sm:mx-auto">
+        <a
+          href="/"
+          aria-label="Go Home"
+          title="Logo"
+          className="inline-block mb-4"
+        >
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
+            <svg
+              className="w-10 h-10 text-deep-purple-accent-400"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+        </a>
+        <h2 className="mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+          <span className="relative inline-block">
+            <svg
+              viewBox="0 0 52 24"
+              fill="currentColor"
+              className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-32 lg:-mt-10 sm:block"
+            >
+              <defs>
+                <pattern
+                  id="6b0188f3-b7a1-4e9b-b95e-cad916bb3042"
+                  x="0"
+                  y="0"
+                  width=".135"
+                  height=".30"
+                >
+                  <circle cx="1" cy="1" r=".7" />
+                </pattern>
+              </defs>
+              <rect
+                fill="url(#6b0188f3-b7a1-4e9b-b95e-cad916bb3042)"
+                width="52"
+                height="24"
+              />
+            </svg>
+            <span className="relative bg-white"></span>
+          </span>{' '}
+          A project by mohd sadique
+        </h2>
+        <p className="text-base text-gray-700 md:text-lg">
+        We are Christopher, Hayleigh, Peter, Abbey and Moritz. We are the maintainers of React Flow, Svelte Flow, and the communities around them
+        </p>
+        <hr className="my-8 border-gray-300" />
+        <div className="flex items-center mb-3 sm:justify-center">
+          <a href="/" className="mr-3 transition duration-300 hover:shadow-lg">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1000px-Download_on_the_App_Store_Badge.svg.png"
+              className="object-cover object-top w-32 mx-auto"
+              alt=""
+            />
+          </a>
+          <a href="/" className="transition duration-300 hover:shadow-lg">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1000px-Google_Play_Store_badge_EN.svg.png"
+              className="object-cover object-top w-32 mx-auto"
+              alt=""
+            />
+          </a>
+        </div>
+        <p className="max-w-xs text-xs text-gray-600 sm:text-sm sm:max-w-sm sm:mx-auto">
+          Sed ut unde omnis iste natus accusantium doloremque laudantium omnis
+          iste.
+        </p>
+      </div>
+    </div>
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <div>
+          <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+            Brand new
+          </p>
+        </div>
+        <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+          <span className="relative inline-block">
+            <svg
+              viewBox="0 0 52 24"
+              fill="currentColor"
+              className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+            >
+              <defs>
+                <pattern
+                  id="f51618fb-0edb-4bcb-b35a-ffc770941286"
+                  x="0"
+                  y="0"
+                  width=".135"
+                  height=".30"
+                >
+                  <circle cx="1" cy="1" r=".7" />
+                </pattern>
+              </defs>
+              <rect
+                fill="url(#f51618fb-0edb-4bcb-b35a-ffc770941286)"
+                width="52"
+                height="24"
+              />
+            </svg>
+            <span className="relative">The</span>
+          </span>{' '}
+          quick, brown fox jumps over a lazy dog
+        </h2>
+        <p className="text-base text-gray-700 md:text-lg">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque rem aperiam, eaque ipsa quae.
+        </p>
+      </div>
+      <div className="grid gap-8 row-gap-0 lg:grid-cols-3">
+        <div className="relative text-center">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-20 sm:h-20">
+            <svg
+              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+          <h6 className="mb-2 text-2xl font-extrabold">Step 1</h6>
+          <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
+            Lookout flogging bilge rat main sheet bilge water nipper fluke to go
+            on account heave down clap
+          </p>
+          <a
+            href="/"
+            aria-label=""
+            className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          >
+            Learn more
+          </a>
+          <div className="top-0 right-0 flex items-center justify-center h-24 lg:-mr-8 lg:absolute">
+            <svg
+              className="w-8 text-gray-700 transform rotate-90 lg:rotate-0"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <line
+                fill="none"
+                strokeMiterlimit="10"
+                x1="2"
+                y1="12"
+                x2="22"
+                y2="12"
+              />
+              <polyline
+                fill="none"
+                strokeMiterlimit="10"
+                points="15,5 22,12 15,19 "
+              />
+            </svg>
+          </div>
+        </div>
+        <div className="relative text-center">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-20 sm:h-20">
+            <svg
+              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+          <h6 className="mb-2 text-2xl font-extrabold">Step 2</h6>
+          <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
+            They urge you to put down your sword and come join the winners. In
+            22 years the only 'winners'
+          </p>
+          <a
+            href="/"
+            aria-label=""
+            className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          >
+            Learn more
+          </a>
+          <div className="top-0 right-0 flex items-center justify-center h-24 lg:-mr-8 lg:absolute">
+            <svg
+              className="w-8 text-gray-700 transform rotate-90 lg:rotate-0"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <line
+                fill="none"
+                strokeMiterlimit="10"
+                x1="2"
+                y1="12"
+                x2="22"
+                y2="12"
+              />
+              <polyline
+                fill="none"
+                strokeMiterlimit="10"
+                points="15,5 22,12 15,19 "
+              />
+            </svg>
+          </div>
+        </div>
+        <div className="relative text-center">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-20 sm:h-20">
+            <svg
+              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+          <h6 className="mb-2 text-2xl font-extrabold">Step 3</h6>
+          <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
+            Tell them I hate them. Is the Space Pope reptilian!? Tell her she
+            looks thin. Hello, little man
+          </p>
+          <a
+            href="/"
+            aria-label=""
+            className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          >
+            Learn more
+          </a>
+        </div>
+      </div>
+    </div>
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <div>
+          <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+            Brand new
+          </p>
+        </div>
+        <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+          <span className="relative inline-block">
+            <svg
+              viewBox="0 0 52 24"
+              fill="currentColor"
+              className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+            >
+              <defs>
+                <pattern
+                  id="db164e35-2a0e-4c0f-ab05-f14edc6d4d30"
+                  x="0"
+                  y="0"
+                  width=".135"
+                  height=".30"
+                >
+                  <circle cx="1" cy="1" r=".7" />
+                </pattern>
+              </defs>
+              <rect
+                fill="url(#db164e35-2a0e-4c0f-ab05-f14edc6d4d30)"
+                width="52"
+                height="24"
+              />
+            </svg>
+            <span className="relative">The</span>
+          </span>{' '}
+          quick, brown fox jumps over a lazy dog
+        </h2>
+        <p className="text-base text-gray-700 md:text-lg">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque rem aperiam, eaque ipsa quae.
+        </p>
+      </div>
+      <div className="grid max-w-sm gap-5 mb-8 lg:grid-cols-3 sm:mx-auto lg:max-w-full">
+        <div className="px-10 py-20 text-center border rounded lg:px-5 lg:py-10 xl:py-20">
+          <p className="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase">
+            20 Nov 2020
+          </p>
+          <a
+            href="/"
+            className="inline-block max-w-xs mx-auto mb-3 text-2xl font-extrabold leading-7 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            aria-label="Read article"
+            title="Nori grape silver beet broccoli kombu beet"
+          >
+            Nori grape silver beet broccoli kombu beet
+          </a>
+          <p className="max-w-xs mx-auto mb-2 text-gray-700">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque.
+          </p>
+          <a
+            href="/"
+            aria-label=""
+            className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          >
+            Read more
+          </a>
+        </div>
+        <div className="px-10 py-20 text-center border rounded lg:px-5 lg:py-10 xl:py-20">
+          <p className="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase">
+            20 Nov 2020
+          </p>
+          <a
+            href="/"
+            className="inline-block max-w-xs mx-auto mb-3 text-2xl font-extrabold leading-7 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            aria-label="Read article"
+            title="Well, the way they make shows is, they make one"
+          >
+            Well, the way they make shows is, they make one
+          </a>
+          <p className="max-w-xs mx-auto mb-2 text-gray-700">
+            Some pilots get picked and become television programs. Some don't,
+            become nothing.
+          </p>
+          <a
+            href="/"
+            aria-label=""
+            className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          >
+            Read more
+          </a>
+        </div>
+        <div className="px-10 py-20 text-center border rounded lg:px-5 lg:py-10 xl:py-20">
+          <p className="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase">
+            20 Nov 2020
+          </p>
+          <a
+            href="/"
+            className="inline-block max-w-xs mx-auto mb-3 text-2xl font-extrabold leading-7 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            aria-label="Read article"
+            title="Pommy ipsum smeg head whizz morris himer due"
+          >
+            Pommy ipsum smeg head whizz morris himer due
+          </a>
+          <p className="max-w-xs mx-auto mb-2 text-gray-700">
+            Taking the mick middle className bog roll bow ties are cool posh
+            nosh off t'shop, stew and dumps.
+          </p>
+          <a
+            href="/"
+            aria-label=""
+            className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          >
+            Read more
+          </a>
+        </div>
+      </div>
+    </div>
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+          <span className="relative inline-block">
+            <svg
+              viewBox="0 0 52 24"
+              fill="currentColor"
+              className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+            >
+              <defs>
+                <pattern
+                  id="903f4a9e-7ac3-441c-9613-04c15fcc0a14"
+                  x="0"
+                  y="0"
+                  width=".135"
+                  height=".30"
+                >
+                  <circle cx="1" cy="1" r=".7" />
+                </pattern>
+              </defs>
+              <rect
+                fill="url(#903f4a9e-7ac3-441c-9613-04c15fcc0a14)"
+                width="52"
+                height="24"
+              />
+            </svg>
+            <span className="relative">The</span>
+          </span>{' '}
+          quick, brown fox jumps over a lazy dog
+        </h2>
+        <p className="text-base text-gray-700 md:text-lg">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque rem aperiam, eaque ipsa quae.
+        </p>
+      </div>
+      <div className="grid grid-cols-2 gap-5 row-gap-6 mb-10 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="text-center">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+            <svg
+              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+          <h6 className="mb-2 font-semibold leading-5">World</h6>
+        </div>
+        <div className="text-center">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+            <svg
+              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+          <h6 className="mb-2 font-semibold leading-5">Sport</h6>
+        </div>
+        <div className="text-center">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+            <svg
+              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+          <h6 className="mb-2 font-semibold leading-5">Weather</h6>
+        </div>
+        <div className="text-center">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+            <svg
+              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+          <h6 className="mb-2 font-semibold leading-5">Projects</h6>
+        </div>
+        <div className="text-center">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+            <svg
+              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+          <h6 className="mb-2 font-semibold leading-5">Fitness</h6>
+        </div>
+        <div className="text-center">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+            <svg
+              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+          <h6 className="mb-2 font-semibold leading-5">News</h6>
+        </div>
+      </div>
+      <div className="text-center">
+       
+      </div>
+    </div>
+    <div className="relative mt-16 bg-deep-purple-accent-400">
+      <svg
+        className="absolute top-0 w-full h-6 -mt-5 sm:-mt-10 sm:h-16 text-deep-purple-accent-400"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 54"
+      >
+        <path
+          fill="currentColor"
+          d="M0 22L120 16.7C240 11 480 1.00001 720 0.700012C960 1.00001 1200 11 1320 16.7L1440 22V54H1320C1200 54 960 54 720 54C480 54 240 54 120 54H0V22Z"
+        />
+      </svg>
+      <div className="px-4 pt-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
+          <div className="md:max-w-md lg:col-span-2">
+           
+            <div className="mt-4 lg:max-w-sm">
+              <p className="text-2xl font-bold text-deep-purple-50">
+              We are building and maintaining open source software for node-based UIs since 2019.
+              </p>
+             
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
+            <div>
+              <p className="font-semibold tracking-wide text-teal-accent-400">
+                Category
+              </p>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    News
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    World
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Games
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    References
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold tracking-wide text-teal-accent-400">
+                Cherry
+              </p>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Web
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    eCommerce
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Business
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Entertainment
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Portfolio
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold tracking-wide text-teal-accent-400">
+                Apples
+              </p>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Media
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Brochure
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Nonprofit
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Educational
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Projects
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold tracking-wide text-teal-accent-400">
+                Business
+              </p>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Infopreneur
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Personal
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Wiki
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Forum
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col justify-between pt-5 pb-10 border-t border-deep-purple-accent-200 sm:flex-row">
+          <p className="text-sm text-blue-500">
+            © Copyright 2020 Lorem Inc. All rights reserved.
+          </p>
+          <div className="flex items-center mt-4 space-x-4 sm:mt-0">
+            <a
+              href="/"
+              className="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
+                <path d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z" />
+              </svg>
+            </a>
+            <a
+              href="/"
+              className="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400"
+            >
+              <svg viewBox="0 0 30 30" fill="currentColor" className="h-6">
+                <circle cx="15" cy="15" r="4" />
+                <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z" />
+              </svg>
+            </a>
+            <a
+              href="/"
+              className="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
+                <path d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+        
+      );
+    };
 export default Home;

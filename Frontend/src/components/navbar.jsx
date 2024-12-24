@@ -66,7 +66,7 @@ function navbar() {
                 {/* Collapse */}
                 <div
                     id="hs-header-base"
-                    className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block "
+                    className="hs-collapse hidden overflow-hidden transition-all duration-300 md:block "
                     aria-labelledby="hs-header-base-collapse"
                 >
                     <div className="overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">

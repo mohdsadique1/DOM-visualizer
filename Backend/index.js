@@ -1,9 +1,10 @@
 // importing express
 const express = require('express');
 const UserRouter = require('./routers/userRouter');
-const PageRouter = require('./routers/domRouter');
+const DomRouter = require('./routers/domRouter');
 
 const cors = require('cors');
+const domModel = require('./models/domModel');
 
 // initializing express
 const app = express();
@@ -15,7 +16,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use('/user', UserRouter);
-app.use('/page', PageRouter);
+app.use('/dom', DomRouter);
 
 // accept and process request
 // route
