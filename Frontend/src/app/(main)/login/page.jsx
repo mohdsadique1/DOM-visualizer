@@ -34,7 +34,7 @@ const Login = () => {
   });
   return (
     <div>
-      <div className="bg-pink-300 py-6 sm:py-8 lg:py-12">
+      <div className="bg-pink-200 py-6 sm:py-8 lg:py-12">
         <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800  md:mb-8 lg:text-3xl">
             Login
@@ -84,7 +84,7 @@ const Login = () => {
               </button>
               <div className="relative flex items-center justify-center">
                 <span className="absolute inset-x-0 h-px bg-gray-300" />
-                <span className="relative bg-gray-800 px-4 text-sm text-white">
+                <span className="relative bg-pink-300 px-4 text-sm text-gray-800">
                   Log in with social
                 </span>
               </div>
@@ -138,7 +138,7 @@ const Login = () => {
                 Don't have an account?{" "}
                 <a
                   href="/Login"
-                  className="text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
+                  className="text-indigo-500 transition duration-100 hover:text-blue-800 active:text-blue-500"
                 >
                   Register
                 </a>

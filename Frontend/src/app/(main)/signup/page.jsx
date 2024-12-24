@@ -58,14 +58,14 @@ const Signup = () => {
   });
 
   return (
-    <div><div className="bg-pink-300 py-6 sm:py-8 lg:py-12">
+    <div><div className="bg-pink-200 py-6 sm:py-8 lg:py-12">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         {/* text - start */}
         <div className="mb-10 md:mb-16">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
             Sign up
           </h2>
-          <p className="mx-auto max-w-screen-md text-center text-blue-500 md:text-lg">
+          <p className="mx-auto max-w-screen-md text-center text-gray-800 md:text-lg">
             This is a section of some simple filler text, also known as placeholder
             text. It shares some characteristics of a real written text but is
             random or otherwise generated.
@@ -153,7 +153,7 @@ const Signup = () => {
             </button>
             <span className="text-sm text-gray-500">*Required</span>
           </div>
-          <p className="text-xs text-blue-600">
+          <p className="text-xs text-gray-800">
             By signing up to our newsletter you agree to our{" "}
             <a
               href="/signup"
@@ -161,7 +161,7 @@ const Signup = () => {
             >
               Privacy Policy
             </a>
-            <Link href="/Login" className="text-teal-500 hover:underline">
+            <Link href="/Login" className="text-blue-700 hover:underline">
               Login here
             </Link>
           </p>
