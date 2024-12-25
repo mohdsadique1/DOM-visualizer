@@ -34,13 +34,13 @@ const Login = () => {
   });
   return (
     <div>
-      <div className="bg-pink-200 py-6 sm:py-8 lg:py-12">
+      <div className="bg-violet-300 py-6 sm:py-8 lg:py-12">
         <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800  md:mb-8 lg:text-3xl">
             Login
           </h2>
           <form onSubmit={loginForm.handleSubmit} className="mx-auto max-w-lg rounded-lg border">
-            <div className="flex flex-col gap-4 p-4 md:p-8">
+            <div className="bg-white flex flex-col gap-4 p-4 md:p-8">
               <div>
                 <label
                   htmlFor="email"
@@ -84,7 +84,7 @@ const Login = () => {
               </button>
               <div className="relative flex items-center justify-center">
                 <span className="absolute inset-x-0 h-px bg-gray-300" />
-                <span className="relative bg-pink-300 px-4 text-sm text-gray-800">
+                <span className="relative bg-white px-4 text-sm text-gray-800">
                   Log in with social
                 </span>
               </div>
@@ -133,12 +133,12 @@ const Login = () => {
                 Continue with Google
               </button>
             </div>
-            <div className="flex items-center justify-center bg-pink-300 p-4">
+            <div className="flex items-center justify-center bg-white p-4">
               <p className="text-center text-sm text-gray-800">
                 Don't have an account?{" "}
                 <a
                   href="/Login"
-                  className="text-indigo-500 transition duration-100 hover:text-blue-800 active:text-blue-500"
+                  className="text-blue-500 transition duration-100 hover:text-blue-800 active:text-blue-500"
                 >
                   Register
                 </a>

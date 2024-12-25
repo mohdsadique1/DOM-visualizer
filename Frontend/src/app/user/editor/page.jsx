@@ -98,7 +98,7 @@ const DOMEditor = () => {
 
 
   return (
-    <div className='grid grid-cols-12 bg-200'>
+    <div className='grid grid-cols-12 bg-violet-300'>
       <div className='col-span-2'>
         <button onClick={addVisualization} className='bg-green-500 py-1 px-3 text-white rounded-full'>Add diagram</button>
         <div className='my-10'>

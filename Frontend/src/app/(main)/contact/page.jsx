@@ -18,7 +18,7 @@ import React from 'react'
     
     <div>
       {/* Contact */}
-      <div className="bg-pink-200">
+      <div className="bg-violet-300">
         <div className="max-w-5xl px-4 xl:px-0 py-10 lg:py-20 mx-auto">
           {/* Title */}
           <div className="max-w-3xl mb-10 lg:mb-14">
@@ -299,7 +299,7 @@ import React from 'react'
                   </p>
                   <p className="mt-2">
                     <a
-                      className="group inline-flex items-center gap-x-2 font-medium text-sm text bg-pink-200 decoration-2 hover:underline focus:outline-none focus:underline"
+                      className="group inline-flex items-center gap-x-2 font-medium text-sm text bg-violet-300 decoration-2 hover:underline focus:outline-none focus:underline"
                       href="#"
                     >
                       Job openings
