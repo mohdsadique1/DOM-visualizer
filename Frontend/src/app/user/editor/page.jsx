@@ -5,6 +5,7 @@ import { CodeBlock, dracula } from 'react-code-blocks';
 import Visualizer from '../visualizer/page';
 import axios, { Axios } from 'axios';
 import toast from 'react-hot-toast';
+import { IconArrowLeft, IconPencilCheck, IconPencilCode, IconTrash } from '@tabler/icons-react';
 
 const DOMEditor = () => {
 
@@ -12,6 +13,9 @@ const DOMEditor = () => {
   const [diagramList, setDiagramList] = useState([]);
   const [selDiagram, setSelDiagram] = useState(null);
   const nameRef = useRef(null);
+  const App = () => {
+    return <IconArrowLeft />;
+  };
 
   const [code, setCode] = useState(`
         <div className="max-w-2xl text-center mx-auto">
@@ -100,14 +104,18 @@ const DOMEditor = () => {
   return (
     <div className='grid grid-cols-12 bg-violet-300'>
       <div className='col-span-2'>
-        <button onClick={addVisualization} className='bg-green-500 py-1 px-3 text-white rounded-full'>Add diagram</button>
+        <button onClick={addVisualization} className='flex gap-2 bg-green-500 py-1 px-2 my-8 ml-3 justify-center place-items-center text-white rounded-full'>
+          <IconPencilCode />
+          Add diagram</button>
         <div className='my-10'>
 
           {
             diagramList.map(diagram => (
-              <div onClick={() => setSelDiagram(diagram)} key={diagram._id} className='border-2 flex gap-5'>
+              <div onClick={() => setSelDiagram(diagram)} key={diagram._id} className='border-2 flex gap-5 justify-between items-center p-2'>
                 <button>{diagram.title}</button>
-                <button onClick={() => deleteDom(diagram._id)} className='bg-red-500 py-1 px-3 text-white rounded-full' >Delete</button>
+                <button onClick={() => deleteDom(diagram._id)} className='flex gap-2  justify-between p-2 bg-red-500 py-1 px-3 text-white rounded-full' >
+                  <IconTrash />
+                  </button>
 
               </div>
             ))
@@ -118,8 +126,11 @@ const DOMEditor = () => {
         {
           selDiagram !== null ? (
             <>
-              <button onClick={updateDom} className='bg-blue-500 py-1 px-3 text-white rounded-full' >Update</button>
-              <input type="text" placeholder='Enter diagram name' className='border m-5' ref={nameRef} />
+              <input type="text" placeholder='Enter diagram name' className='w-1/2 justify-between flex-item-center-right mt-2 mb-6 place-content-between  border m-5' ref={nameRef} />
+              <button onClick={updateDom} className='flex-item-baseline gap-2 bg-blue-500 py-2 px-4 mt-6 mb-6 self-center text-white rounded-full' >
+                <IconPencilCheck /></button>
+
+              
               <Editor theme={''} height="40vh" defaultLanguage="html" value={selDiagram.code} onChange={setCode} />
               <Visualizer />
             </>

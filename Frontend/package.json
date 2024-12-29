@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
+    "@tabler/icons-react": "^3.26.0",
     "@xyflow/react": "^12.3.6",
     "axios": "^1.7.9",
     "formik": "^2.4.6",

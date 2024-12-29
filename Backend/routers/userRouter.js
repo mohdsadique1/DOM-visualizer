@@ -78,9 +78,21 @@ router.get('/getbyid/:id', (req, res) => {
     // res.send('getbyid response from user');
 });
 
+router.get('/getuser', verifyToken, (req, res) => {
+    Model.findById(req.user._id)
+        .then((result) => {
+            res.status(200).json(result);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    // res.send('getbyid response from user');
+});
+
 router.post('/authenticate', (req, res) => {
     console.log(req.body);
-    
+
     Model.findOne(req.body)
         .then((result) => {
 

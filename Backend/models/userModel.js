@@ -6,6 +6,8 @@ const mySchema = new Schema({
     password: { type: String, reuired: true },
     city: { type: String, default: 'Unknown' },
     profile: { type: Types.ObjectId, ref: 'pages' },
+    avatar: String,
+    bio: { type: String},
     createdAt: { type: Date, default: Date.now }
 });
 
