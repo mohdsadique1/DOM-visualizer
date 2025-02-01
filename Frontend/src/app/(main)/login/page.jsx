@@ -1,10 +1,21 @@
 'use client'
 import React from 'react'
-import { useFormik } from 'formik';
+import { useFormik, validateYupSchema } from 'formik';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+import * as Yup from 'yup'
+
+const LoginSchema = Yup.object().shape({
+
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string().required('Password required')
+    .matches(/[a-z]/, 'Lower case letter is required')
+    .matches(/[A-Z]/, 'Upper case letter is required')
+    .matches(/[0-9]/, 'Number is required')
+    .matches(/\W/, 'Special character is required'),
+});
 
 const Login = () => {
 
@@ -30,7 +41,8 @@ const Login = () => {
           toast.error('Login Failed')
         });
 
-    }
+    },
+    validationSchema: LoginSchema
   });
   return (
     <div>
@@ -54,6 +66,11 @@ const Login = () => {
                   value={loginForm.values.email}
                   className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
                 />
+                {
+                  (loginForm.touched.email && loginForm.errors.email) && (
+                    <p className='text-sm text-red-500'>{loginForm.errors.email}</p>
+                  )
+                }
               </div>
               <div>
                 <label
@@ -72,6 +89,11 @@ const Login = () => {
                   required=""
                   aria-describedby='passworderror'
                 />
+                 {
+                  (loginForm.touched.password && loginForm.errors.password) && (
+                    <p className='text-sm text-red-500'>{loginForm.errors.password}</p>
+                  )
+                }
                 <Link
                   href="/Login"
                   className="text-sm text-blue-500 hover:underline ml-auto"

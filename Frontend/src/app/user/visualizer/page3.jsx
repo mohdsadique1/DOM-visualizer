@@ -10,15 +10,12 @@ import ReactFlow, {
 } from "reactflow";
 import ReactHtmlParser from "react-html-parser";
 import "reactflow/dist/style.css";
-import HTMLEditor from "./Editor";
-import useDomContext from "@/context/DomContext";
-import DomClasses from "./domnode.module.css";
-import classes from "./domnode.module.css";
 import clsx from "clsx";
-import { TextInput, Title, classNames } from "@mantine/core";
-import { HoverCard, Button, Text, Group, Box, Grid } from "@mantine/core";
 import { AnimatePresence, motion } from "framer-motion";
+import useDomContext from "@/context/DOMContext";
 import useDiagramContext from "@/context/DiagramContext";
+import classes from './styles.module.css';
+import DomClasses from './domStyles.module.css';
 
 const initBgColor = "#1A192B";
 
@@ -30,30 +27,30 @@ const nodeTypes = {
   DomNode: ({ data, isConnectable, id }) => {
     //console.log(data);
     return (
-      <HoverCard width={280} shadow="md">
-        <HoverCard.Target>
+      <div width={280} shadow="md">
+        <div>
           <div className={clsx(DomClasses.domNode)}>
-            <HoverCard.Dropdown style={{ pointerEvents: "none" }}>
-              <Box className={classes.parent}>
+            <div style={{ pointerEvents: "none" }}>
+              <div className={classes.parent}>
                 <h5>styles</h5>
                 {Object.keys(data.styles).map((styleName) => (
                   <p>
                     {styleName} : {data.styles[styleName]}
                   </p>
                 ))}
-              </Box>
+              </div>
               <hr />
-              <Box className={classes.parent}>
+              <div className={classes.parent}>
                 {" "}
                 <h5 style={{ letterSpacing: "1px" }}>Classes</h5>
                 <p className={`${classes.myClass}`}>{data.classes}</p>
-              </Box>
+              </div>
 
-              <Box className={classes.parent}>
+              <div className={classes.parent}>
                 <h5 style={{ letterSpacing: "1px" }}>Ids</h5>
                 <p className={`${classes.myid}`}>{data.ids}</p>
-              </Box>
-            </HoverCard.Dropdown>
+              </div>
+            </div>
 
             <p className={DomClasses.nodeTagName}>{data.label}</p>
             <Handle
@@ -71,8 +68,8 @@ const nodeTypes = {
               isConnectable={isConnectable}
             />
           </div>
-        </HoverCard.Target>
-      </HoverCard>
+        </div>
+      </div>
     );
   },
 };
@@ -81,7 +78,7 @@ const HtmlToReactFlow = ({ htmlMarkup, zoomedIn, setZoomedIn }) => {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
-  const {code, setCode} = useDomContext();
+  // const {code, setCode} = useDomContext();
 
   let nodeId = 0;
   let edgeId = 0;
@@ -208,13 +205,11 @@ const createReactFlowEdges = (nodes) => {
           fitView
           attributionPosition="bottom-left"
         >
-          <Button
-            m={10}
-            className={classes.btn_zoom}
+          <button
             onClick={(e) => setZoomedIn(!zoomedIn)}
           >
             {zoomedIn ? "Zoom Out" : "Zoom In"}
-          </Button>
+          </button>
           {/* <MiniMap
           nodeStrokeColor={(n) => {
             if (n.type === "input") return "#0041d0";
@@ -340,45 +335,11 @@ const Visualizer = () => {
   return (
     <div>
       {selDiagram === null ? (
-        <Title c="dimmed" align="center" order={1} mt={20}>
+        <h2>
           Select or Create a New Diagram
-        </Title>
+        </h2>
       ) : (
         <>
-          <Grid>
-            <Grid.Col span={6}>
-              <input
-                value={selDiagram.name}
-                onChange={changeName}
-                className={classes.inputField}
-                label="Diagram Name"
-                placeholder="Enter Diagram Name"
-              />
-              <Button onClick={e => updateDiagram(code)} className={classes.btn_dom}>
-                Save Change
-              </Button>
-            </Grid.Col>
-
-            <Grid.Col span={6}>
-              <input
-                ref={urlRef}
-                className={classes.inputField}
-                placeholder="Enter the website link"
-              />
-              <Button
-                className={classes.btn_dom}
-                onClick={() => extractHTMLFromUrl(urlRef.current.value)}
-              >
-                Extract DOM
-              </Button>
-              <Button color="red" variant="filled" ml={"md"} onClick={deleteDiagram}>
-                Delete
-              </Button>
-              {/* this is delete button */}
-            </Grid.Col>
-          </Grid>
-
-          <HTMLEditor />
           <div>
             <HtmlToReactFlow
               htmlMarkup={code}

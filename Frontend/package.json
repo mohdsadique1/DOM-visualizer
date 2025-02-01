@@ -13,6 +13,7 @@
     "@tabler/icons-react": "^3.26.0",
     "@xyflow/react": "^12.3.6",
     "axios": "^1.7.9",
+    "clsx": "^2.1.1",
     "formik": "^2.4.6",
     "framer-motion": "^11.15.0",
     "next": "15.1.0",
@@ -22,8 +23,9 @@
     "react-color": "^2.19.3",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.4.1",
+    "react-html-parser": "^2.0.2",
     "reactflow": "^11.11.4",
-    "yup": "^1.5.0"
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

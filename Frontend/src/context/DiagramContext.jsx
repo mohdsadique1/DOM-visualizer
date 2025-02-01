@@ -1,35 +1,53 @@
-import { GradientWrapper } from "@/components/common/GradientWrapper";
-import { CustomWrapper } from "@/customization/custom-wrapper";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactFlowProvider } from "@xyflow/react";
-import { ReactNode } from "react";
-import { TooltipProvider } from "../components/ui/tooltip";
-import { ApiInterceptor } from "../controllers/API/api";
-import { AuthProvider } from "./authContext";
+import axios from "axios";
+import toast from "react-hot-toast";
 
-const ContextWrapper = () => {
-  const queryClient = new QueryClient();
-  //element to wrap all context
-  return (
-    <>
-      <CustomWrapper>
-        <GradientWrapper>
-          <QueryClientProvider client={queryClient}>
-            <AuthProvider>
-              <TooltipProvider skipDelayDuration={0}>
-                <ReactFlowProvider>
-                  <ApiInterceptor />
-                  {children}
-                </ReactFlowProvider>
-              </TooltipProvider>
-            </AuthProvider>
-          </QueryClientProvider>
-        </GradientWrapper>
-      </CustomWrapper>
-    </>
-  );
+const { createContext, useState, useContext } = require("react")
+
+const DiagramContext = createContext();
+
+export const DiagramProvider = ({ children }) => {
+
+    const [selDiagram, setSelDiagram] = useState(null);
+    const [diagramList, setDiagramList] = useState([]);
+
+    const token = localStorage.getItem('token');
+
+    const updateDiagram = (dataToUpdate) => {
+        axios.put('http://localhost:5000/dom/update/' + selDiagram._id, dataToUpdate)
+            .then((result) => {
+              toast.success('Dom Updated Successfully');
+              loadDiagrams();
+            })
+            .catch((err) => {
+              console.log(err);
+              toast.error('Failed to Update Dom');
+            });
+    }
+
+    const loadDiagrams = () => {
+        axios.get('http://localhost:5000/dom/getall', {
+            headers: {
+              'x-auth-token': token
+            }
+          })
+            .then((result) => {
+              console.table(result.data);
+              setDiagramList(result.data);
+            }).catch((err) => {
+              console.log(err);
+      
+              if (err?.response?.status === 403) {
+                toast.error('You are not authorised to view this page');
+              }
+            });
+    }
+
+
+    return <DiagramContext.Provider value={{ selDiagram, setSelDiagram, updateDiagram, loadDiagrams, diagramList }}>
+        {children}
+    </DiagramContext.Provider>
 }
 
-const AuthCtx = ContextWrapper();
+const useDiagramContext = () => useContext(DiagramContext);
 
-export default AuthCtx;
+export default useDiagramContext;
