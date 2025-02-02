@@ -59,7 +59,7 @@ const HTMLEditor = () => {
             diagramList.map(diagram => (
               <div onClick={() => setSelDiagram(diagram)} key={diagram._id} className='border-2 flex gap-5 justify-between items-center p-2'>
                 <button>{diagram.title}</button>
-                <button onClick={() => deleteDom(diagram._id)} className='flex gap-2  justify-between p-2 bg-red-500 py-1 px-3 text-white rounded-full' >
+                <button onClick={() => deleteDom(diagram._id)} className='flex gap-2  justify-between p-2 bg-red-500 py-1 px-3 border border-gray-700 text-white rounded-full' >
                   <IconTrash />
                 </button>
               </div>
@@ -71,15 +71,16 @@ const HTMLEditor = () => {
         {
           selDiagram !== null ? (
             <>
-               
-              <input type="text" placeholder='Enter Url' className='w-100% justify-between flex-1 item-center-right mt-2 mb-6 place-content-between  border border-gray-800 m-2 rounded' ref={nameRef}/>
-              <input type="text" placeholder='Enter diagram name' className='w-1/2 mx-auto justify-between flex-1 gap-2 justify-center item-center mt-2 mb-6 place-content-between  border border-gray-800 m-2 rounded' ref={nameRef} />
+              <div className='flex gap-5 py-6'>
+                <input type="text" placeholder='Enter Url' className='w-full px-3 py-1 border border-gray-800 rounded' ref={nameRef} />
+                <input type="url" placeholder='Enter diagram name' className='w-full px-3 py-1 border border-gray-800 rounded' ref={nameRef} />
+              </div>
               {/* <button onClick={updateDom} className='flex-item-baseline gap-2 bg-blue-500 py-2 px-4 mt-6 mb-6 self-center text-white rounded-full' >
                 <IconPencilCheck /></button> */}
 
 
-              <Editor theme={''} className='p-1 mx-auto border border-gray-800 rounded'height="40vh" defaultLanguage="html" value={selDiagram.code} onChange={setCode} />
-              
+              <Editor theme={''} className='p-1 mx-auto border border-gray-800 rounded' height="40vh" defaultLanguage="html" value={selDiagram.code} onChange={setCode} />
+
               <Visualizer />
             </>
           ) : (

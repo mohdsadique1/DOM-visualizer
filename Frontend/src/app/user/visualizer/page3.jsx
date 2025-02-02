@@ -79,62 +79,64 @@ const HtmlToReactFlow = ({ htmlMarkup, zoomedIn, setZoomedIn }) => {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   // const {code, setCode} = useDomContext();
+  console.log(htmlMarkup);
+  
 
   let nodeId = 0;
   let edgeId = 0;
 
-const createReactFlowNodes = (node, parentIndex = 0, parentCount = 0, parentPosition = { x: 0, y: 0 }, parentNodeId = null) => {
-  if (!node) {
-    return [];
-  }
+  const createReactFlowNodes = (node, parentIndex = 0, parentCount = 0, parentPosition = { x: 0, y: 0 }, parentNodeId = null) => {
+    if (!node) {
+      return [];
+    }
 
-  const currentNodeId = `node-${nodeId++}`;
+    const currentNodeId = `node-${nodeId++}`;
 
-  const childNodes = node.children
-    ? node.children.flatMap((child, index) =>
+    const childNodes = node.children
+      ? node.children.flatMap((child, index) =>
         createReactFlowNodes(child, index, node.children.length, {
           x: parentPosition.x + parentIndex * 300 + index * 100, // adjust x-position based on index within parent's children and parent's index
           y: parentPosition.y + 100,
         }, currentNodeId)
       )
-    : [];
+      : [];
 
-  const nodes = [
-    ...childNodes,
-    {
-      id: currentNodeId,
-      type: "DomNode",
-      parent: parentNodeId,
-      data: {
-        label: node.nodeName,
-        styles: node.styles,
-        classes: node.classes,
+    const nodes = [
+      ...childNodes,
+      {
+        id: currentNodeId,
+        type: "DomNode",
+        parent: parentNodeId,
+        data: {
+          label: node.nodeName,
+          styles: node.styles,
+          classes: node.classes,
+        },
+        position: parentPosition,
       },
-      position: parentPosition,
-    },
-  ];
+    ];
 
-  return nodes;
-};
+    return nodes;
+  };
 
-const createReactFlowEdges = (nodes) => {
-  const edges = [];
+  const createReactFlowEdges = (nodes) => {
+    const edges = [];
 
-  for (let i = 0; i < nodes.length; i++) {
-    const currentNode = nodes[i];
-    const parentNodeId = currentNode.parent;
+    for (let i = 0; i < nodes.length; i++) {
+      const currentNode = nodes[i];
+      const parentNodeId = currentNode.parent;
 
-    if (parentNodeId) {
-      edges.push({
-        id: `edge-${currentNode.id}-${parentNodeId}`,
-        source: parentNodeId,
-        target: currentNode.id,
-      });
+      if (parentNodeId) {
+        edges.push({
+          id: `edge-${currentNode.id}-${parentNodeId}`,
+          source: parentNodeId,
+          target: currentNode.id,
+        });
+      }
     }
-  }
 
-  return edges;
-};
+    return edges;
+  };
 
   const extractNodeNameAndStyles = (element) => {
     if (!React.isValidElement(element)) {
@@ -205,24 +207,27 @@ const createReactFlowEdges = (nodes) => {
           fitView
           attributionPosition="bottom-left"
         >
-          <button
+
+         
+          <MiniMap
+            nodeStrokeColor={(n) => {
+              if (n.type === "input") return "#0041d0";
+              if (n.type === "selectorNode") return bgColor;
+              if (n.type === "output") return "#ff0072";
+            }}
+            nodeColor={(n) => {
+              if (n.type === "selectorNode") return bgColor;
+              return "#fff";
+            }}
+          />
+          <Controls />
+        </ReactFlow>
+        <button
+            className="bg-blue-500 px-3 py-1 m-2 text-white rounded-md z-10"
             onClick={(e) => setZoomedIn(!zoomedIn)}
           >
             {zoomedIn ? "Zoom Out" : "Zoom In"}
           </button>
-          {/* <MiniMap
-          nodeStrokeColor={(n) => {
-            if (n.type === "input") return "#0041d0";
-            if (n.type === "selectorNode") return bgColor;
-            if (n.type === "output") return "#ff0072";
-          }}
-          nodeColor={(n) => {
-            if (n.type === "selectorNode") return bgColor;
-            return "#fff";
-          }}
-        /> */}
-          <Controls />
-        </ReactFlow>
       </motion.div>
     </AnimatePresence>
   );
@@ -233,6 +238,8 @@ const Visualizer = () => {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   const { code, setCode, extractHTMLFromUrl } = useDomContext();
+  console.log(code);
+  
   const { selDiagram, setSelDiagram, updateDiagram, loadDiagrams } =
     useDiagramContext();
 
@@ -268,11 +275,11 @@ const Visualizer = () => {
     //console.log(node);
   }, []);
 
-  useEffect(() => {
-    if(selDiagram === null) return;
-    setCode(selDiagram.html);
-  }, [selDiagram])
-  
+  // useEffect(() => {
+  //   if (selDiagram === null) return;
+  //   setCode(selDiagram.html);
+  // }, [selDiagram])
+
 
   useEffect(() => {
     setNodes([
