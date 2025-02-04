@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react';
 import { useFormik, validateYupSchema } from 'formik';
 import axios from 'axios';
 import Link from 'next/link';
@@ -20,12 +20,20 @@ const LoginSchema = Yup.object().shape({
 const Login = () => {
 
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
+
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(prevState => !prevState);
+  };
 
   const loginForm = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
+
+
 
     onSubmit: (values) => {
       console.log(values);
@@ -84,12 +92,20 @@ const Login = () => {
                   name="password"
                   onChange={loginForm.handleChange}
                   value={loginForm.values.password}
-                  type='password'
+                  type={showPassword ? "text" : "password"}
                   className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
                   required=""
                   aria-describedby='passworderror'
                 />
-                 {
+               
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="password-toggle-btn"
+                >
+                  {showPassword ? "Hide Password" : "Show Password"} {/* Toggle button text */}
+                </button>
+                {
                   (loginForm.touched.password && loginForm.errors.password) && (
                     <p className='text-sm text-red-500'>{loginForm.errors.password}</p>
                   )
