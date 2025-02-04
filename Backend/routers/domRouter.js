@@ -1,8 +1,21 @@
 const express = require('express');
 const Model = require('../models/domModel');
 const verifyToken = require('../middlewares/verifytoken');
+const getQuotes = require('../scrapper');
 
 const router = express.Router();
+
+
+router.post("/fetch-dom", async (req, res) => {
+    const { url } = req.body;
+    try {
+      const result = await getQuotes(url);
+      res.status(200).json(result);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json(error);
+    }
+  });
 
 router.post('/add', verifyToken, (req, res) => {
     req.body.user = req.user._id;

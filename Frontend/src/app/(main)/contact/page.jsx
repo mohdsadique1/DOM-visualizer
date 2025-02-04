@@ -18,7 +18,7 @@ import React from 'react'
     
     <div>
       {/* Contact */}
-      <div className="bg-violet-300">
+      <div className="bg-white">
         <div className="max-w-5xl px-4 xl:px-0 py-10 lg:py-20 mx-auto">
           {/* Title */}
           <div className="max-w-3xl mb-10 lg:mb-14">
@@ -42,7 +42,7 @@ import React from 'react'
                       id="name"
                       onChange={contactform.handleChange}
                       value={contactform.values.name}
-                      className="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-white placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
+                      className="peer p-4 block w-full bg-white border border-gray-800 rounded-lg text-sm text-gray-800 placeholder:text-transparent focus:outline focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
         focus:pt-6
         focus:pb-2
         [&:not(:placeholder-shown)]:pt-6
@@ -72,7 +72,7 @@ import React from 'react'
                       id="email"
                       onChange={contactform.handleChange}
                       value={contactform.values.email}
-                      className="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-white placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
+                      className="peer p-4 block w-full bg-white border border-gray-800 rounded-lg text-sm text-gray-800 placeholder:text-transparent focus:outline focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
         focus:pt-6
         focus:pb-2
         [&:not(:placeholder-shown)]:pt-6
@@ -99,20 +99,20 @@ import React from 'react'
                   <div className="relative">
                     <input
                       type="text"
-                      id="email"
+                      id="company"
                       onChange={contactform.handleChange}
-                      value={contactform.values.email}
-                      className="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-white placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
+                      value={contactform.values.company}
+                      className="peer p-4 block w-full bg-white border border-gray-800 rounded-lg text-sm text-gray-800 placeholder:text-transparent focus:outline focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
         focus:pt-6
         focus:pb-2
         [&:not(:placeholder-shown)]:pt-6
         [&:not(:placeholder-shown)]:pb-2
         autofill:pt-6
         autofill:pb-2"
-                      placeholder="Enter your email"
+                      placeholder="company"
                     />
-                    <label
-                      htmlFor="hs-tac-input-company"
+                   <label
+                      htmlFor="hs-tac-input-phone"
                       className="absolute top-0 start-0 p-4 h-full text-neutral-400 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
           peer-focus:text-xs
           peer-focus:-translate-y-1.5
@@ -121,7 +121,7 @@ import React from 'react'
           peer-[:not(:placeholder-shown)]:-translate-y-1.5
           peer-[:not(:placeholder-shown)]:text-neutral-400"
                     >
-                      Company
+                      company
                     </label>
                   </div>
                   {/* End Input */}
@@ -132,7 +132,7 @@ import React from 'react'
                       id="phone"
                       onChange={contactform.handleChange}
                       value={contactform.values.phone}
-                      className="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-white placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
+                      className="peer p-4 block w-full bg-white border border-gray-800 rounded-lg text-sm text-gray-800 placeholder:text-transparent focus:outline focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
         focus:pt-6
         focus:pb-2
         [&:not(:placeholder-shown)]:pt-6
@@ -161,7 +161,7 @@ import React from 'react'
                       id="message"
                       onChange={contactform.handleChange}
                       value={contactform.values.message}
-                      className="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-white placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
+                      className="peer p-4 block w-full bg-white border border-gray-800 rounded-lg text-sm  placeholder:text-transparent focus:outline focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
         focus:pt-6
         focus:pb-2
         [&:not(:placeholder-shown)]:pt-6
@@ -192,7 +192,7 @@ import React from 'react'
                   </p>
                   <p className="mt-5">
                     <button
-                      className="group inline-flex items-center gap-x-2 py-2 px-3 bg-red-600 font-medium text-sm text-neutral-800 rounded-full focus:outline-none"
+                      className="group inline-flex items-center gap-x-2 py-2 px-3 bg-red-600 font-medium text-sm text-neutral-800 rounded-full focus:outline"
                       type='submit'
                     >
                       Submit

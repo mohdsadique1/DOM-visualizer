@@ -1,15 +1,17 @@
 import Link from 'next/link';
 import React from 'react'
 
+
 const Home = () => {
 
   return (
 
-        <div className="bg-violet-300 px-4 py-16 mx-8 sm:max-w-xl md:max-w-full lg:max-w-screen-h md:px-24 lg:px-8 lg:py-20">
+        <div className="bg-white px-4 py-16 mx-8 sm:max-w-xl md:max-w-full lg:max-w-screen-h md:px-24 lg:px-8 lg:py-20">
           <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
             <div className="flex flex-col justify-center">
               <div className="max-w-xl mb-6">
-                <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl sm:leading-none">
+                <h2
+                 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl sm:leading-none">
                 Dom Visualizer
                   <span className="relative px-1">
                     <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
@@ -70,7 +72,7 @@ const Home = () => {
             <div>
               <img
                 className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-                src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+                src="https://images.contentstack.io/v3/assets/bltac01ee6daa3a1e14/bltda0388d92f831363/642ae00bb663cf12b94108c0/featured_refactoring-singlestores-visual-explain-to-use-react-flow.png"
                 alt=""
               />
             </div>
@@ -138,19 +140,19 @@ const Home = () => {
           <div className="flex flex-col items-end px-3">
             <img
               className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-              src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              src="https://pbs.twimg.com/media/FRm6NSXWYAIINIB.jpg:large"
               alt=""
             />
             <img
               className="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
-              src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              src="https://fluttergems.dev/media-cards/flutter_graph_view.png"
               alt=""
             />
           </div>
           <div className="px-3">
             <img
               className="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-              src="https://images.pexels.com/photos/3182739/pexels-photo-3182739.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
+              src="https://europe1.discourse-cdn.com/unity/original/4X/7/9/9/799f032b1a2523f79babc4e51f4143a2b9e6d970.jpeg"
               alt=""
             />
           </div>
@@ -161,7 +163,7 @@ const Home = () => {
       <div className="flex flex-col max-w-screen-lg overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto">
         <div className="relative lg:w-1/2">
           <img
-            src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+            src="https://cdn.dribbble.com/users/458/screenshots/2086559/media/63b365b0d06deb7396974dbb05df75f4.jpg?resize=400x300&vertical=center"
             alt=""
             className="object-cover w-full lg:absolute h-80 lg:h-full"
           />
@@ -249,18 +251,10 @@ This basic implementation gives you a starting point. You can expand it by addin
         <hr className="my-8 border-gray-300" />
         <div className="flex items-center mb-3 sm:justify-center">
           <a href="/" className="mr-3 transition duration-300 hover:shadow-lg">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1000px-Download_on_the_App_Store_Badge.svg.png"
-              className="object-cover object-top w-32 mx-auto"
-              alt=""
-            />
+           
           </a>
           <a href="/" className="transition duration-300 hover:shadow-lg">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1000px-Google_Play_Store_badge_EN.svg.png"
-              className="object-cover object-top w-32 mx-auto"
-              alt=""
-            />
+           
           </a>
         </div>
        

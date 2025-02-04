@@ -42,12 +42,12 @@ const nodeTypes = {
               <hr />
               <div className={classes.parent}>
                 {" "}
-                <h5 style={{ letterSpacing: "1px" }}>Classes</h5>
+                <h5 style={{ fontSize: 10 }}>Classes</h5>
                 <p className={`${classes.myClass}`}>{data.classes}</p>
               </div>
 
               <div className={classes.parent}>
-                <h5 style={{ letterSpacing: "1px" }}>Ids</h5>
+                <h5 style={{ fontSize: 5 }}>Ids</h5>
                 <p className={`${classes.myid}`}>{data.ids}</p>
               </div>
             </div>
@@ -80,7 +80,7 @@ const HtmlToReactFlow = ({ htmlMarkup, zoomedIn, setZoomedIn }) => {
 
   // const {code, setCode} = useDomContext();
   console.log(htmlMarkup);
-  
+
 
   let nodeId = 0;
   let edgeId = 0;
@@ -208,7 +208,7 @@ const HtmlToReactFlow = ({ htmlMarkup, zoomedIn, setZoomedIn }) => {
           attributionPosition="bottom-left"
         >
 
-         
+
           <MiniMap
             nodeStrokeColor={(n) => {
               if (n.type === "input") return "#0041d0";
@@ -223,11 +223,11 @@ const HtmlToReactFlow = ({ htmlMarkup, zoomedIn, setZoomedIn }) => {
           <Controls />
         </ReactFlow>
         <button
-            className="bg-blue-500 px-3 py-1 m-2 text-white rounded-md z-10"
-            onClick={(e) => setZoomedIn(!zoomedIn)}
-          >
-            {zoomedIn ? "Zoom Out" : "Zoom In"}
-          </button>
+          className="bg-blue-500 px-3 py-1 m-2 text-white rounded-md z-10"
+          onClick={(e) => setZoomedIn(!zoomedIn)}
+        >
+          {zoomedIn ? "Zoom Out" : "Zoom In"}
+        </button>
       </motion.div>
     </AnimatePresence>
   );
@@ -239,7 +239,7 @@ const Visualizer = () => {
 
   const { code, setCode, extractHTMLFromUrl } = useDomContext();
   console.log(code);
-  
+
   const { selDiagram, setSelDiagram, updateDiagram, loadDiagrams } =
     useDiagramContext();
 

@@ -1,0 +1,66 @@
+.domNode{
+    border-radius: 50px;
+    border: 3px solid #35dfb4;
+    background-color: #54a0df;    
+/* 
+    this section provide style to the overall node */
+
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nodeTagName{
+    font-size: 10px;
+    font-weight: bold;
+    color: #fafdff;   
+           /* this is provide to the name of node present in the circle */
+    margin: 0;
+}
+.inputField{
+    outline:none;
+    width:80%;
+    margin-right: 8px;
+    padding:4px;
+}
+.btn_dom{
+    text-align: center;
+    border-radius: 5%;
+}
+.parent_react_flow{
+    position: relative;
+}
+.btn_zoom{
+    position: absolute;
+    top:0;
+    right:0;
+    right:3px;
+    z-index: 20;
+}
+.react_flow{
+    margin-top:5px;
+}
+.input_area{
+    display: flex;
+    background-color: orange;
+    color:aqua
+}
+.myid{
+    color:dimgray;
+    padding-left: 15px;
+    
+}
+.myClass{
+    color:dimgray;
+    padding-left: 15px;
+    text-align: end;
+    font-size:13px;
+}
+.parent{
+    display:flex;
+    font-size:13px;
+    justify-content: space-between;
+    align-items: center;
+}

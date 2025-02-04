@@ -1,8 +1,8 @@
-import React from 'react'
+'use client';
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
 const Manageuser = () => {
@@ -44,11 +44,7 @@ const Manageuser = () => {
             toast.error('Failed to delete user')   
         });
     }
-
-    useEffect(() => {
-        deleteUser();
-      }, [])
-
+    
   return (
     <div className=''>
     <div className='container mx-auto py-1'>
@@ -57,13 +53,13 @@ const Manageuser = () => {
         <table className='w-full'>
             <thead>
                 <tr className='border bg-gray-600'>
-                    <th className='p-3'>Name</th>
-                    <th className='p-3'>ID</th>
-                    <th className='p-3'>Email</th>
-                    <th className='p-3'>Password</th>
-                    <th className='p-3'>City</th>
-                    <th className='p-3'>Created At</th>
-                    <th className='p-3' colSpan={2}></th>
+                    <th className='p-3 text-white'>Name</th>
+                    <th className='p-3 text-white'>ID</th>
+                    <th className='p-3 text-white'>Email</th>
+                    <th className='p-3 text-white'>Password</th>
+                    <th className='p-3 text-white'>City</th>
+                    <th className='p-3 text-white'>Created At</th>
+                    <th className='p-3 text-white' colSpan={2}></th>
 
                 </tr>
             </thead>
@@ -82,7 +78,7 @@ const Manageuser = () => {
                                  <button onClick={ () => { deleteUser(user._id) } } className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
                                  </td>
                                  <td className='p-3'>
-                                 <Link href={'/updateuser/'+user._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>Update</Link>
+                                 <Link href={'/admin/updateuser/'+user._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>Update</Link>
                                  </td>
                             </tr>
                         )

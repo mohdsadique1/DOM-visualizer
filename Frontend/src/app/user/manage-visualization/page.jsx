@@ -41,12 +41,12 @@ const Managevisualization = () => {
             <table className='w-full'>
                 <thead>
                     <tr className='border bg-gray-600'>
-                        <th className='p-3'>visualization id</th>
-                        <th className='p-3'>visualization Name</th>
-                        <th className='p-3'>visualization Model</th>
-                        <th className='p-3'>visualization Category</th>
-                        <th className='p-3'>Created At</th>
-                        <th className='p-3' colSpan={2}></th>
+                        <th className='p-3 text-white'>visualization id</th>
+                        <th className='p-3 text-white'>visualization Name</th>
+                        <th className='p-3 text-white'>visualization Model</th>
+                        <th className='p-3 text-white'>visualization Category</th>
+                        <th className='p-3 text-white'>Created At</th>
+                        <th className='p-3 text-white' colSpan={2}></th>
 
                     </tr>
                 </thead>
