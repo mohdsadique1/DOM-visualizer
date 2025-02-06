@@ -2,7 +2,7 @@
 import React, { useRef } from 'react'
 import ShinyText from '@/components/shinytext';
 import TiltedCard from '@/components/tiltedcard';
-import VariableProximity from '@/components/variableproximity';
+import GradientText from '@/components/gradienttext';
 
 const Home = () => {
   const containerRef = useRef(null);
@@ -11,15 +11,6 @@ const Home = () => {
     ref={containerRef}
     style={{ position: 'relative' }}
   >
-    <VariableProximity
-      label={'Hover me! And then star React Bits on GitHub, or else...'}
-      className={'variable-proximity-demo'}
-      fromFontVariationSettings="'wght' 400, 'opsz' 9"
-      toFontVariationSettings="'wght' 1000, 'opsz' 40"
-      containerRef={containerRef}
-      radius={100}
-      falloff='linear'
-    />
   </div>
   return (
     <div className="bg-white px-4 py-16 mx-8 sm:max-w-xl md:max-w-full lg:max-w-screen-h md:px-24 lg:px-8 lg:py-20">
@@ -27,15 +18,15 @@ const Home = () => {
         <div className="flex flex-col justify-center">
           <div className="max-w-xl mb-6">
             <h2
-              className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl sm:leading-none">
+              className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-7xl sm:leading-none">
               <TiltedCard
                 imageSrc="https://blog.openreplay.com/images/data-visualization-with-d3-js/images/hero.png"
                 altText="Dom Visualizer"
                 captionText="Dom Visualizer"
-                containerHeight="300px"
-                containerWidth="300px"
-                imageHeight="300px"
-                imageWidth="300px"
+                containerHeight="400px"
+                containerWidth="400px"
+                imageHeight="400px"
+                imageWidth="400px"
                 rotateAmplitude={12}
                 scaleOnHover={1.2}
                 showMobileWarning={false}
@@ -102,7 +93,7 @@ const Home = () => {
             </ul>
           </div>
         </div>
-        <div>
+        <div className="items-center flex-auto">
           <img
             className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
             src="https://images.contentstack.io/v3/assets/bltac01ee6daa3a1e14/bltda0388d92f831363/642ae00bb663cf12b94108c0/featured_refactoring-singlestores-visual-explain-to-use-react-flow.png"
@@ -132,15 +123,6 @@ const Home = () => {
           </div>
           <div>
             <p className="text-base text-gray-700 md:text-2xl">
-              <VariableProximity
-                label={'Hover me! And then star React Bits on GitHub, or else...'}
-                className={'variable-proximity-demo'}
-                fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                toFontVariationSettings="'wght' 1000, 'opsz' 40"
-                containerRef={containerRef}
-                radius={100}
-                falloff='linear'
-              />
               Use these modern JavaScript frameworks to build a more dynamic and user-friendly frontend.
             </p>
           </div>
@@ -155,19 +137,18 @@ const Home = () => {
             </div>
             <div className="max-w-xl mb-6">
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none">
-                <VariableProximity
-                  label={'Ready out-of-the-box'}
-                  className={'variable-proximity-demo'}
-                  fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
-                  containerRef={containerRef}
-                  radius={100}
-                  falloff='linear'
-                />
+                Ready out of the box
               </h2>
               <p className="text-base text-gray-700 md:text-lg">
                 The things you need are already there: dragging nodes, zooming, panning, selecting multiple nodes, and adding/removing elements are all built-in
               </p>
+              <GradientText
+                colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+                animationSpeed={3}
+                showBorder={false}
+                className="custom-class"
+              >
+              </GradientText>
             </div>
             <div>
               <a
@@ -295,24 +276,8 @@ const Home = () => {
             A project by mohd sadique
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            <TiltedCard
-              altText="In this project clicking on any DOM element in the tree will highlight it on the page, showing details about it in the preview section.
-            This basic implementation gives you a starting point. You can expand it by adding more features such as showing CSS styles, handling dynamic changes, and improving the overall UI"
-              containerHeight="300px"
-              containerWidth="300px"
-              imageHeight="300px"
-              imageWidth="300px"
-              rotateAmplitude={12}
-              scaleOnHover={1.2}
-              showMobileWarning={false}
-              showTooltip={true}
-              displayOverlayContent={true}
-              overlayContent={
-                <p className='tilted-card-demo-text'
-                />
-              }
-            />
-
+            In this project clicking on any DOM element in the tree will highlight it on the page, showing details about it in the preview section.
+            This basic implementation gives you a starting point. You can expand it by adding more features such as showing CSS styles, handling dynamic changes, and improving the overall UI
           </p>
           <hr className="my-8 border-gray-300" />
           <div className="flex items-center mb-3 sm:justify-center">

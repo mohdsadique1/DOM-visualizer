@@ -15,7 +15,7 @@ const HTMLEditor = () => {
   const urlRef = useRef(null);
 
   const { diagramList, loadDiagrams, selDiagram, setSelDiagram } = useDiagramContext();
-  const { code, setCode } = useDomContext();
+  const { code, setCode, extractHTMLFromUrl } = useDomContext();
 
   useEffect(() => {
     loadDiagrams();
@@ -48,11 +48,9 @@ const HTMLEditor = () => {
       });
   }
 
-  const fetchDOMData = async () => {
-    const res = await axios.post('http://localhost:5000/dom/fetch-dom', { url: urlRef.current.value });
-    console.log(res.data);
-    setCode(res.data);
-  }
+  // const fetchDOMData = async () => {
+
+  // }
 
   return (
     <div className='grid grid-cols-12 bg-white h-screen m-5 p-2 border border-gray-800 rounded'>
@@ -64,7 +62,7 @@ const HTMLEditor = () => {
 
           {
             diagramList.map(diagram => (
-              <div onClick={() => setSelDiagram(diagram)} key={diagram._id} className='border-2 flex gap-5 justify-between items-center p-2'>
+              <div onClick={() => { setSelDiagram(diagram); setCode(diagram.code); }} key={diagram._id} className='border-2 flex gap-5 justify-between items-center p-2'>
                 <button>{diagram.title}</button>
                 <button onClick={() => deleteDom(diagram._id)} className='flex gap-2  justify-between p-2 bg-red-500 py-1 px-3 border border-gray-700 text-white rounded-full' >
                   <IconTrash />
@@ -82,12 +80,12 @@ const HTMLEditor = () => {
                 <input type="text" placeholder='Enter Url' className='w-full px-3 py-1 border border-gray-800 rounded' ref={nameRef} />
                 <input type="url" placeholder='Enter diagram name' className='w-full px-3 py-1 border border-gray-800 rounded' ref={urlRef} />
               </div>
-              <button className='flex gap-1  justify-between p-2 bg-blue-500 py-1 px-3 my-3 items-center border border-gray-700 text-white rounded-full' onClick={fetchDOMData}>Fetch DOM from URL</button>
+              <button className='flex gap-1  justify-between p-2 bg-blue-500 py-1 px-3 my-3 items-center border border-gray-700 text-white rounded-full' onClick={() => extractHTMLFromUrl(urlRef.current.value)}>Fetch DOM from URL</button>
               {/* <button onClick={updateDom} className='flex-item-baseline gap-2 bg-blue-500 py-2 px-4 mt-6 mb-6 self-center text-white rounded-full' >
                 <IconPencilCheck /></button> */}
 
 
-              <Editor theme={''} className='p-1 mx-auto border border-gray-800 rounded' height="40vh" defaultLanguage="html" value={selDiagram.code} onChange={setCode} />
+              <Editor theme={''} className='p-1 mx-auto border border-gray-800 rounded' height="40vh" defaultLanguage="html" value={code} onChange={setCode} />
 
               <Visualizer />
             </>
