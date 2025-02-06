@@ -12,7 +12,7 @@ const Home = () => {
               <div className="max-w-xl mb-6">
                 <h2
                  className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl sm:leading-none">
-                Dom Visualizer
+                  Dom Visualizer
                   <span className="relative px-1">
                     <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
                   </span>

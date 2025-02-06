@@ -26,15 +26,6 @@ const Signup = () => {
 
   const router = useRouter();
 
-  const createPage = async (name, userid) => {
-    const res = await axios.post('http://localhost:5000/page/add', {
-      title: `${name}s Profile'`
-    });
-    const profileData = res.data;
-    const res2 = await axios.put('http://localhost:5000/user/update/' + userid, { profile: profileData._id });
-    router.push('/login');
-  }
-
   const signupForm = useFormik({
     initialValues: {
       name: '',
@@ -48,7 +39,7 @@ const Signup = () => {
       axios.post('http://localhost:5000/user/add', values)
         .then((result) => {
           toast.success('User added successfully');
-          createPage(result.data.name, result.data._id)
+          router.push('/login');
         }).catch((err) => {
           console.log(err);
           toast.error(err?.response?.data?.message || 'some error occured');
@@ -88,7 +79,7 @@ const Signup = () => {
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
             />
           </div>
-          
+
           <div className="sm:col-span-2">
             <label
               htmlFor="company"
@@ -137,7 +128,7 @@ const Signup = () => {
               htmlFor="confirm-password"
               className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
             >
-             Confirm Password
+              Confirm Password
             </label>
             <input
               name="confirmPassword"
