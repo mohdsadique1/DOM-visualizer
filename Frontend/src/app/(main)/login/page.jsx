@@ -22,7 +22,6 @@ const Login = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
 
-
   const togglePasswordVisibility = () => {
     setShowPassword(prevState => !prevState);
   };
@@ -44,7 +43,7 @@ const Login = () => {
           console.log(res.status);
           toast.success('Login Success')
           localStorage.setItem('token', res.data.token);
-          router.push('/user/editor')
+          router.push('/user/visualizer')
         }).catch((err) => {
           toast.error('Login Failed')
         });
