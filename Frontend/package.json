@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
     "@monaco-editor/react": "^4.6.0",
     "@tabler/icons-react": "^3.26.0",
     "@xyflow/react": "^12.3.6",

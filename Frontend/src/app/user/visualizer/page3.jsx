@@ -16,6 +16,7 @@ import useDomContext from "@/context/DOMContext";
 import useDiagramContext from "@/context/DiagramContext";
 import classes from './styles.module.css';
 import DomClasses from './domStyles.module.css';
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 
 const initBgColor = "#1A192B";
 
@@ -30,27 +31,27 @@ const nodeTypes = {
       <div width={280} shadow="md">
         <div>
           <div className={clsx(DomClasses.domNode)}>
-            <div style={{ pointerEvents: "none" }}>
-              <div className={classes.parent}>
-                <h5>styles</h5>
+            <Popover style={{ pointerEvents: "none" }}>
+              <PopoverButton className="z-10">show</PopoverButton>
+              <PopoverPanel className={classes.parent}>
+                <h5 className="text-[10px]">styles</h5>
                 {Object.keys(data.styles).map((styleName) => (
                   <p>
                     {styleName} : {data.styles[styleName]}
                   </p>
                 ))}
-              </div>
-              <hr />
-              <div className={classes.parent}>
-                {" "}
-                <h5 style={{ fontSize: 10 }}>Classes</h5>
-                <p className={`${classes.myClass}`}>{data.classes}</p>
-              </div>
+                <hr />
+                <div className={classes.parent}>
+                  <h5 style={{ fontSize: 10 }}>Classes</h5>
+                  <p className={`${classes.myClass}`}>{data.classes}</p>
+                </div>
 
-              <div className={classes.parent}>
-                <h5 style={{ fontSize: 5 }}>Ids</h5>
-                <p className={`${classes.myid}`}>{data.ids}</p>
-              </div>
-            </div>
+                <div className={classes.parent}>
+                  <h5 style={{ fontSize: 5 }}>Ids</h5>
+                  <p className={`${classes.myid}`}>{data.ids}</p>
+                </div>
+              </PopoverPanel>
+            </Popover>
 
             <p className={DomClasses.nodeTagName}>{data.label}</p>
             <Handle
@@ -95,8 +96,8 @@ const HtmlToReactFlow = ({ htmlMarkup, zoomedIn, setZoomedIn }) => {
     const childNodes = node.children
       ? node.children.flatMap((child, index) =>
         createReactFlowNodes(child, index, node.children.length, {
-          x: parentPosition.x + parentIndex * 300 + index * 100, // adjust x-position based on index within parent's children and parent's index
-          y: parentPosition.y + 100,
+          x: parentPosition.x + parentIndex * 300 + index * 150, // adjust x-position based on index within parent's children and parent's index
+          y: parentPosition.y + 150,
         }, currentNodeId)
       )
       : [];
