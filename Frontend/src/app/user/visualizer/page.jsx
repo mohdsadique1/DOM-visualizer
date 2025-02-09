@@ -77,8 +77,8 @@ const HTMLEditor = () => {
           selDiagram !== null ? (
             <>
               <div className='flex gap-5 py-6'>
-                <input type="text" placeholder='Enter Url' className='w-full px-3 py-1 border border-gray-800 rounded' ref={nameRef} />
-                <input type="url" placeholder='Enter diagram name' className='w-full px-3 py-1 border border-gray-800 rounded' ref={urlRef} />
+                <input type="text" placeholder='Enter diagram name' className='w-full px-3 py-1 border border-gray-800 rounded' ref={nameRef} />
+                <input type="url" placeholder='Enter url' className='w-full px-3 py-1 border border-gray-800 rounded' ref={urlRef} />
               </div>
               <button className='flex gap-1  justify-between p-2 bg-blue-500 py-1 px-3 my-3 items-center border border-gray-700 text-white rounded-full' onClick={() => extractHTMLFromUrl(urlRef.current.value)}>Fetch DOM from URL</button>
               {/* <button onClick={updateDom} className='flex-item-baseline gap-2 bg-blue-500 py-2 px-4 mt-6 mb-6 self-center text-white rounded-full' >

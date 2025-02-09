@@ -18,14 +18,14 @@ const Home = () => {
         <div className="flex flex-col justify-center">
           <div className="max-w-xl mb-6">
             <h2
-              className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-7xl sm:leading-none">
+              className="max-w-lg mb-2 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl items-center sm:leading-none">
               <TiltedCard
                 imageSrc="https://blog.openreplay.com/images/data-visualization-with-d3-js/images/hero.png"
                 altText="Dom Visualizer"
                 captionText="Dom Visualizer"
-                containerHeight="400px"
+                containerHeight="200px"
                 containerWidth="400px"
-                imageHeight="400px"
+                imageHeight="200px"
                 imageWidth="400px"
                 rotateAmplitude={12}
                 scaleOnHover={1.2}
@@ -42,8 +42,8 @@ const Home = () => {
                 <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
               </span>
             </h2>
-            <ShinyText text="A DOM visualizer typically represents the DOM tree structure of a webpage in a graphical or interactive manner. It shows the hierarchy of HTML elements and their relationships, which can be helpful for debugging, learning about web structures, or improving the development process." disabled={false} speed={3} className='custom-class' />
             <p className="text-base text-gray-700 md:text-xl">
+            <ShinyText text="A DOM visualizer typically represents the DOM tree structure of a webpage in a graphical or interactive manner. It shows the hierarchy of HTML elements and their relationships, which can be helpful for debugging, learning about web structures, or improving the development process." disabled={false} speed={3} className='custom-class' />
             </p>
           </div>
           <p className="mb-4 text-sm font-bold tracking-widest uppercase">
@@ -139,8 +139,9 @@ const Home = () => {
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none">
                 Ready out of the box
               </h2>
+              
               <p className="text-base text-gray-700 md:text-lg">
-                The things you need are already there: dragging nodes, zooming, panning, selecting multiple nodes, and adding/removing elements are all built-in
+              <ShinyText text="The things you need are already there: dragging nodes, zooming, panning, selecting multiple nodes, and adding/removing elements are all built-in" />
               </p>
               <GradientText
                 colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
@@ -169,23 +170,28 @@ const Home = () => {
           </div>
           <div className="flex items-center justify-center -mx-4 lg:pl-8">
             <div className="flex flex-col items-end px-3">
-              <img
-                className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-                src="https://pbs.twimg.com/media/FRm6NSXWYAIINIB.jpg:large"
-                alt=""
+              <TiltedCard
+                imageSrc="https://europe1.discourse-cdn.com/unity/original/4X/7/9/9/799f032b1a2523f79babc4e51f4143a2b9e6d970.jpeg"
+                altText=""
+                captionText=""
+                containerHeight="400px"
+                containerWidth="600px"
+                imageHeight="400px"
+                imageWidth="600px"
+                rotateAmplitude={12}
+                scaleOnHover={1.2}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={true}
+                overlayContent={
+                  <p className="tilted-card-demo-text">
+                  </p>
+                }
               />
-              <img
-                className="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
-                src="https://fluttergems.dev/media-cards/flutter_graph_view.png"
-                alt=""
-              />
+             
             </div>
             <div className="px-3">
-              <img
-                className="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-                src="https://europe1.discourse-cdn.com/unity/original/4X/7/9/9/799f032b1a2523f79babc4e51f4143a2b9e6d970.jpeg"
-                alt=""
-              />
+              
             </div>
           </div>
         </div>
@@ -203,7 +209,7 @@ const Home = () => {
           <div className="flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2">
 
             <h5 className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
-              Powered & Designed by mohd sadique
+              Powered & Designed By Mohd Sadique
             </h5>
             <p className="mb-5 text-gray-800">
               <span className="font-bold"></span>
