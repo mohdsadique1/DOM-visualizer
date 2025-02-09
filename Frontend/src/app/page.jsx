@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import ShinyText from '@/components/shinytext';
 import TiltedCard from '@/components/tiltedcard';
 import GradientText from '@/components/gradienttext';
+import HomeVisualizer from './(main)/HomeVisualizer';
 
 const Home = () => {
   const containerRef = useRef(null);
@@ -42,8 +43,8 @@ const Home = () => {
                 <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
               </span>
             </h2>
-            <p className="text-base text-gray-700 md:text-xl">
             <ShinyText text="A DOM visualizer typically represents the DOM tree structure of a webpage in a graphical or interactive manner. It shows the hierarchy of HTML elements and their relationships, which can be helpful for debugging, learning about web structures, or improving the development process." disabled={false} speed={3} className='custom-class' />
+            <p className="text-base text-gray-700 md:text-xl">
             </p>
           </div>
           <p className="mb-4 text-sm font-bold tracking-widest uppercase">
@@ -94,11 +95,7 @@ const Home = () => {
           </div>
         </div>
         <div className="items-center flex-auto">
-          <img
-            className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-            src="https://images.contentstack.io/v3/assets/bltac01ee6daa3a1e14/bltda0388d92f831363/642ae00bb663cf12b94108c0/featured_refactoring-singlestores-visual-explain-to-use-react-flow.png"
-            alt=""
-          />
+         <HomeVisualizer />
         </div>
       </div>
       <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -139,9 +136,8 @@ const Home = () => {
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none">
                 Ready out of the box
               </h2>
-              
-              <p className="text-base text-gray-700 md:text-lg">
               <ShinyText text="The things you need are already there: dragging nodes, zooming, panning, selecting multiple nodes, and adding/removing elements are all built-in" />
+              <p className="text-base text-gray-700 md:text-lg">
               </p>
               <GradientText
                 colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}

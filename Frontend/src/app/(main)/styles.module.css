@@ -1,0 +1,78 @@
+/* Main container for the DOM visualizer */
+.dom-visualizer {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+  }
+  
+  /* The individual node representing an HTML element */
+  .node {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Highlight a node on hover */
+  .node:hover {
+    background-color: #e0e7ff;
+  }
+  
+  /* The tag name of the node */
+  .node .tag-name {
+    font-weight: bold;
+    color: #3b3b3b;
+    margin-right: 10px;
+  }
+  
+  /* The attributes of the node */
+  .node .attributes {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  /* Nested nodes (children elements) */
+  .node .children {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  /* Collapsible nodes */
+  .collapsible .children {
+    display: none;
+  }
+  
+  /* Toggle button for collapsible nodes */
+  .collapsible .toggle-btn {
+    cursor: pointer;
+    margin-right: 10px;
+    color: #007bff;
+    font-size: 1.2em;
+    transition: transform 0.2s ease;
+  }
+  
+  /* Rotate the toggle button when expanded */
+  .collapsible.expanded .toggle-btn {
+    transform: rotate(180deg);
+  }
+  
+  /* A line indicating the parent-child relationship */
+  .node-line {
+    border-left: 2px solid #bbb;
+    margin-left: -1px;
+    height: 100%;
+    position: absolute;
+    left: 20px;
+    top: 0;
+  }
+  
