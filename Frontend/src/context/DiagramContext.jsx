@@ -10,12 +10,12 @@ export const DiagramProvider = ({ children }) => {
 
   const [selDiagram, setSelDiagram] = useState(null);
   const [diagramList, setDiagramList] = useState([]);
-  const { setCode } = useDomContext();
+  const { setCode, code } = useDomContext();
 
   const token = localStorage.getItem('token');
 
   const updateDiagram = (dataToUpdate) => {
-    axios.put('http://localhost:5000/dom/update/' + selDiagram._id, dataToUpdate)
+    axios.put('http://localhost:5000/dom/update/' + selDiagram._id, { code, ...dataToUpdate })
       .then((result) => {
         toast.success('Dom Updated Successfully');
         loadDiagrams();

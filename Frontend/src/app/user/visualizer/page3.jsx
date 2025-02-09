@@ -17,6 +17,7 @@ import useDiagramContext from "@/context/DiagramContext";
 import classes from './styles.module.css';
 import DomClasses from './domStyles.module.css';
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
+import { IconEye } from "@tabler/icons-react";
 
 const initBgColor = "#1A192B";
 
@@ -31,29 +32,36 @@ const nodeTypes = {
       <div width={280} shadow="md">
         <div>
           <div className={clsx(DomClasses.domNode)}>
-            <Popover style={{ pointerEvents: "none" }}>
-              <PopoverButton className="z-10">show</PopoverButton>
-              <PopoverPanel className={classes.parent}>
-                <h5 className="text-[10px]">styles</h5>
-                {Object.keys(data.styles).map((styleName) => (
-                  <p>
-                    {styleName} : {data.styles[styleName]}
-                  </p>
-                ))}
-                <hr />
-                <div className={classes.parent}>
-                  <h5 style={{ fontSize: 10 }}>Classes</h5>
-                  <p className={`${classes.myClass}`}>{data.classes}</p>
-                </div>
+            <div className="flex flex-col">
 
-                <div className={classes.parent}>
-                  <h5 style={{ fontSize: 5 }}>Ids</h5>
-                  <p className={`${classes.myid}`}>{data.ids}</p>
-                </div>
-              </PopoverPanel>
-            </Popover>
+              <Popover className="relative">
+                <PopoverButton className="bg-black p-2 rounded text-white">
+                  <IconEye size={10} />
+                </PopoverButton>
+                <PopoverPanel anchor="bottom" className="flex flex-col bg-white p-2 rounded">
+                  <h5 className="">Styles</h5>
+                  <hr />
+                  {Object.keys(data.styles).map((styleName) => (
+                    <p>
+                      {styleName} : {data.styles[styleName]}
+                    </p>
+                  ))}
+                  <div className="mt-5">
+                    <h5>Classes</h5>
+                    <hr />
+                    <p className={`${classes.myClass}`}>{data.classes}</p>
+                  </div>
 
-            <p className={DomClasses.nodeTagName}>{data.label}</p>
+                  <div className="mt-5">
+                    <h5>Ids</h5>
+                    <hr />
+                    <p className={`${classes.myid}`}>{data.ids}</p>
+                  </div>
+                </PopoverPanel>
+              </Popover>
+
+              <p className={DomClasses.nodeTagName}>{data.label}</p>
+            </div>
             <Handle
               type="target"
               position={Position.Top}

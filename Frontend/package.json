@@ -11,7 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@monaco-editor/react": "^4.6.0",
-    "@tabler/icons-react": "^3.26.0",
+    "@tabler/icons-react": "^3.30.0",
     "@xyflow/react": "^12.3.6",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
