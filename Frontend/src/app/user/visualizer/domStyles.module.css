@@ -34,7 +34,7 @@ body {
 }
 .btn_dom{
     text-align: center;
-    border-radius: 5%;
+    border-radius: 10%;
 }
 .parent_react_flow{
     position: relative;
