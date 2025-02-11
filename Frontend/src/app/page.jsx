@@ -43,7 +43,7 @@ const Home = () => {
                 <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
               </span>
             </h2>
-            <ShinyText text="A DOM visualizer typically represents the DOM tree structure of a webpage in a graphical or interactive manner. It shows the hierarchy of HTML elements and their relationships, which can be helpful for debugging, learning about web structures, or improving the development process." disabled={false} speed={3} className='custom-class' />
+            <ShinyText text="A DOM visualizer typically represents the DOM tree structure of a webpage in a graphical or interactive manner. It shows the hierarchy of HTML elements and their relationships, which can be helpful for debugging, learning about web structures, or improving the development process." disabled={false} speed={3} className='custom-className' />
             <p className="text-base text-gray-700 md:text-xl">
             </p>
           </div>
@@ -98,23 +98,23 @@ const Home = () => {
          <HomeVisualizer />
         </div>
       </div>
-      <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div class="grid grid-cols-2 row-gap-8 md:grid-cols-4">
-          <div class="text-center md:border-r">
-            <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">144K</h6>
-            <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="grid grid-cols-2 row-gap-8 md:grid-cols-4">
+          <div className="text-center md:border-r">
+            <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl">144K</h6>
+            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
               Github Stars
             </p>
           </div>
-          <div class="text-center md:border-r">
-            <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">12.9K</h6>
-            <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+          <div className="text-center md:border-r">
+            <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl">12.9K</h6>
+            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
               Weekly Installs
             </p>
           </div>
-          <div class="text-center md:border-r">
-            <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">48.3K</h6>
-            <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+          <div className="text-center md:border-r">
+            <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl">48.3K</h6>
+            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
               License
             </p>
           </div>
@@ -136,14 +136,15 @@ const Home = () => {
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none">
                 Ready out of the box
               </h2>
-              <ShinyText text="The things you need are already there: dragging nodes, zooming, panning, selecting multiple nodes, and adding/removing elements are all built-in" />
+              
               <p className="text-base text-gray-700 md:text-lg">
+
               </p>
               <GradientText
                 colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
                 animationSpeed={3}
                 showBorder={false}
-                className="custom-class"
+                className="custom-className"
               >
               </GradientText>
             </div>

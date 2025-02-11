@@ -4,10 +4,11 @@ import axios from 'axios'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+const ISSERVER = typeof window === 'undefined';
 
 const Manageuser = () => {
     
-   const [userList, setUserList] = useState([]);
+   const [userList, setUserList] = useState(JSON.parse(ISSERVER ? localStorage.getItem ('user'): null));;
    const token = localStorage.getItem('token');
    const router = useRouter();
 

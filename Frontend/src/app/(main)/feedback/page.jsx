@@ -1,11 +1,11 @@
+'use client';
 import React, { useState } from 'react'
-import { Formik } from 'formik'
-import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2'
+import toast from 'react-hot-toast';
+const ISSERVER = typeof window === 'undefined';
 
 const Feedback = () => {
-
-    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+    
+    const [currentUser, setCurrentUser] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
     console.log(currentUser);
 
     const feedData = async (formdata, { resetForm }) => {
@@ -15,7 +15,7 @@ const Feedback = () => {
 
         const res = await fetch('http://localhost:5000/feedback/add', {
             method: 'POST',
-            body: JSON.stringify( formdata ),
+            body: JSON.stringify(formdata),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -24,11 +24,7 @@ const Feedback = () => {
         console.log(res.status)
 
         if (res.status === 200) {
-            Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: 'Signed Successfully'
-            })
+            toast.success('Signed Successfully');
         }
 
     }
@@ -81,7 +77,7 @@ const Feedback = () => {
                                     }
                                 </Formik>
 
-                                
+
 
 
                             </div>

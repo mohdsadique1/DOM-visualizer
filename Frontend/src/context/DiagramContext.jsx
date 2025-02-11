@@ -1,18 +1,18 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 import useDomContext from "./DOMContext";
-
-const { createContext, useState, useContext } = require("react")
+import { createContext, useState, useContext } from "react";
+const ISSERVER = typeof window === 'undefined';
 
 const DiagramContext = createContext();
 
 export const DiagramProvider = ({ children }) => {
 
-  const [selDiagram, setSelDiagram] = useState(null);
-  const [diagramList, setDiagramList] = useState([]);
+  const [selDiagram, setSelDiagram] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
+  const [diagramList, setDiagramList] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
   const { setCode, code } = useDomContext();
 
-  const token = localStorage.getItem('token');
+  const token = ISSERVER ? localStorage.getItem('token') : null;
 
   const updateDiagram = (dataToUpdate) => {
     axios.put('http://localhost:5000/dom/update/' + selDiagram._id, { code, ...dataToUpdate })

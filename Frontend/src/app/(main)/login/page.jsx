@@ -110,7 +110,7 @@ const Login = () => {
                   )
                 }
                 <Link
-                  href="/Login"
+                  href="/login"
                   className="text-sm text-blue-500 hover:underline ml-auto"
                 >
                   Forget Password?
@@ -174,7 +174,7 @@ const Login = () => {
               <p className="text-center text-sm text-gray-800">
                 Don't have an account?{" "}
                 <a
-                  href="/Login"
+                  href="/login"
                   className="text-blue-500 transition duration-100 hover:text-blue-800 active:text-blue-500"
                 >
                   Register

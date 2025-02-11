@@ -2,20 +2,21 @@
 import { useFormik } from 'formik';
 import React from 'react'
 
-    const contact = () => {
-    const contactform = useFormik({
-        initialValues: {
-          email: '',
-          password: '',
-          company: '',
-          phone: '',
-        },
-        onSubmit: (values) => {
-          console.log(values);
-        }
-      });
+const contact = () => {
+  const contactform = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      password: '',
+      company: '',
+      phone: '',
+    },
+    onSubmit: (values) => {
+      console.log(values);
+    }
+  });
   return (
-    
+
     <div>
       {/* Contact */}
       <div className="bg-white">
@@ -52,7 +53,7 @@ import React from 'react'
                       placeholder="Name"
                     />
                     <label
-                      htmlFor="hs-tac-input-name"
+                      htmlFor="name"
                       className="absolute top-0 start-0 p-4 h-full text-gray-400 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
           peer-focus:text-xs
           peer-focus:-translate-y-1.5
@@ -111,7 +112,7 @@ import React from 'react'
         autofill:pb-2"
                       placeholder="company"
                     />
-                   <label
+                    <label
                       htmlFor="hs-tac-input-phone"
                       className="absolute top-0 start-0 p-4 h-full text-neutral-400 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
           peer-focus:text-xs
@@ -158,6 +159,7 @@ import React from 'react'
                   {/* Textarea */}
                   <div className="relative">
                     <textarea
+                      type="text"
                       id="message"
                       onChange={contactform.handleChange}
                       value={contactform.values.message}

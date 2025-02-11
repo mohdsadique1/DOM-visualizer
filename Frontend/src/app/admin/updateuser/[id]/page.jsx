@@ -5,11 +5,12 @@ import { Formik, useFormik } from 'formik';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+const ISSERVER = typeof window === 'undefined';
 
 
 const UpdateUser = () => {
 
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
   const { id } = useParams();
   const router = useRouter();
 

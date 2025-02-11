@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { Formik, useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+const ISSERVER = typeof window === 'undefined';
 
 const Profile = () => {
 
   const token = localStorage.getItem('token');
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
 
   const fetchUserData = async () => {
     const res = await axios.get(`http://localhost:5000/user/getuser`, {

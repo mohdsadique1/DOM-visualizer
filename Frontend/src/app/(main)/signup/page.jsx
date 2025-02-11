@@ -152,7 +152,7 @@ const Signup = () => {
             >
               Privacy Policy
             </a>
-            <Link href="/Login" className="text-blue-700 hover:underline">
+            <Link href="/login" className="text-blue-700 hover:underline">
               Login here
             </Link>
           </p>
