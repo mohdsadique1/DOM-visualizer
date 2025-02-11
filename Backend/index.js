@@ -8,11 +8,11 @@ const domModel = require('./models/domModel');
 
 // initializing express
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // middleware
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: '*'
 }));
 app.use(express.json());
 app.use('/user', UserRouter);
