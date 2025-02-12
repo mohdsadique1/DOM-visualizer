@@ -1,7 +1,7 @@
 const express = require('express');
 const Model = require('../models/userModel');
 const jwt = require('jsonwebtoken');
-const verifyToken = require('../middlewares/verifyToken');
+const verifyToken = require('../middlewares/verifytoken');
 require('dotenv').config();
 
 const router = express.Router();

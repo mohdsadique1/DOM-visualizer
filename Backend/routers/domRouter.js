@@ -1,6 +1,6 @@
 const express = require('express');
 const Model = require('../models/domModel');
-const verifyToken = require('../middlewares/verifyToken.js');
+const verifyToken = require('../middlewares/verifytoken.js');
 const jwt = require('jsonwebtoken');
 const getQuotes = require('../scrapper');
 
