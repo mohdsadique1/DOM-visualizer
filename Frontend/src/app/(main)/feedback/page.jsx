@@ -1,11 +1,12 @@
 'use client';
+import { Formik } from 'formik';
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 const ISSERVER = typeof window === 'undefined';
 
 const Feedback = () => {
     
-    const [currentUser, setCurrentUser] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
+    const [currentUser, setCurrentUser] = useState([]);
     console.log(currentUser);
 
     const feedData = async (formdata, { resetForm }) => {
@@ -13,7 +14,7 @@ const Feedback = () => {
         console.log(formdata)
         // resetForm()
 
-        const res = await fetch('http://localhost:5000/feedback/add', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback/add`, {
             method: 'POST',
             body: JSON.stringify(formdata),
             headers: {

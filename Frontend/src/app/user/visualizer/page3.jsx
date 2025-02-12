@@ -329,7 +329,7 @@ const Visualizer = () => {
     console.log(selDiagram);
   };
   const deleteDiagram = () => {
-    fetch(`http://localhost:5000/diagram/delete/${selDiagram._id}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/diagram/delete/${selDiagram._id}`, {
       method: "DELETE",
     })
       .then((response) => {

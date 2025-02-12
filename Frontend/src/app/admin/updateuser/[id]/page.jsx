@@ -10,12 +10,12 @@ const ISSERVER = typeof window === 'undefined';
 
 const UpdateUser = () => {
 
-  const [userData, setUserData] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
+  const [userData, setUserData] = useState([]);
   const { id } = useParams();
   const router = useRouter();
 
   const fetchUserData = async () => {
-    const res = await axios.get('http://localhost:5000/user/getbyid/' + id);
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getbyid/` + id);
     console.log(res.data);
     setUserData(res.data);
   }
@@ -26,7 +26,7 @@ const UpdateUser = () => {
 
   const submitForm = (values) => {
     console.log(values);
-    axios.put('http://localhost:5000/user/update/'+id, values)
+    axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/update/`+id, values)
     .then((result) => {
       toast.success('User Updated Successfully');
       router.back();

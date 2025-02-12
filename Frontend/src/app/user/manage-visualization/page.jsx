@@ -7,9 +7,9 @@ const ISSERVER = typeof window === 'undefined';
 
 const Managevisualization = () => {
 
-    const [visualizationList, setvisualizationList] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
+    const [visualizationList, setvisualizationList] = useState([]);
     const fetchvisualization = () => {
-        axios.get('http://localhost:5000/visualization/getall')
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/visualization/getall`)
             .then((result) => {
                 console.table(result.data);
                 setvisualizationList(result.data);
@@ -23,7 +23,7 @@ const Managevisualization = () => {
     }, [])
 
     const deletevisualization = (id) => {
-        axios.delete('http://localhost:5000/visualization/delete/' + id)
+        axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/visualization/delete/` + id)
             .then((result) => {
                 toast.success('visualization Deleted Successfully')
                 fetchvisualization();

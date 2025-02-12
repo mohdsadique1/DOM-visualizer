@@ -8,14 +8,14 @@ const DiagramContext = createContext();
 
 export const DiagramProvider = ({ children }) => {
 
-  const [selDiagram, setSelDiagram] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
-  const [diagramList, setDiagramList] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
+  const [selDiagram, setSelDiagram] = useState(null);
+  const [diagramList, setDiagramList] = useState([]);
   const { setCode, code } = useDomContext();
 
-  const token = ISSERVER ? localStorage.getItem('token') : null;
+  const token = !ISSERVER ? localStorage.getItem('token') : null;
 
   const updateDiagram = (dataToUpdate) => {
-    axios.put('http://localhost:5000/dom/update/' + selDiagram._id, { code, ...dataToUpdate })
+    axios.put(`${process.env.NEXT_PUBLIC_API_URL}/dom/update/` + selDiagram._id, { code, ...dataToUpdate })
       .then((result) => {
         toast.success('Dom Updated Successfully');
         loadDiagrams();
@@ -27,7 +27,7 @@ export const DiagramProvider = ({ children }) => {
   }
 
   const loadDiagrams = () => {
-    axios.get('http://localhost:5000/dom/getall', {
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/dom/getall`, {
       headers: {
         'x-auth-token': token
       }

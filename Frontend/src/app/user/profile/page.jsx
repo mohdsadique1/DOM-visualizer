@@ -7,11 +7,11 @@ const ISSERVER = typeof window === 'undefined';
 
 const Profile = () => {
 
-  const token = localStorage.getItem('token');
-  const [userData, setUserData] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));
+  const token = !ISSERVER ? localStorage.getItem('token') : '';
+  const [userData, setUserData] = useState(null);
 
   const fetchUserData = async () => {
-    const res = await axios.get(`http://localhost:5000/user/getuser`, {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getuser`, {
       headers: {
         'x-auth-token': token
       }
@@ -29,7 +29,7 @@ const Profile = () => {
   const formSubmit = (values) => {
 
     console.log(values);
-    axios.put('http://localhost:5000/user/update/' + userData._id, values)
+    axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/update/` + userData._id, values)
       .then((result) => {
         toast.success('page Updated Successfully');
         fetchUserData();

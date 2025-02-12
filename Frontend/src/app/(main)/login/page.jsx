@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import * as Yup from 'yup'
+const ISSERVER = typeof window === 'undefined';
 
 const LoginSchema = Yup.object().shape({
 
@@ -37,12 +38,12 @@ const Login = () => {
     onSubmit: (values) => {
       console.log(values);
 
-      axios.post('http://localhost:5000/user/authenticate', values)
+      axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/authenticate`, values)
         .then((res) => {
           console.log(res.data);
           console.log(res.status);
           toast.success('Login Success')
-          localStorage.setItem('token', res.data.token);
+          !ISSERVER && localStorage.setItem('token', res.data.token);
           router.push('/user/visualizer')
         }).catch((err) => {
           toast.error('Login Failed')
@@ -96,7 +97,7 @@ const Login = () => {
                   required=""
                   aria-describedby='passworderror'
                 />
-               
+
                 <button
                   type="button"
                   onClick={togglePasswordVisibility}

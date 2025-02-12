@@ -17,7 +17,7 @@ export const DomProvider = ({ children }) => {
   </div>`);
 
   const extractHTMLFromUrl = async (url) => {
-    const res = await axios.post('http://localhost:5000/dom/fetch-dom', { url });
+    const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/dom/fetch-dom`, { url });
     console.log(res.data);
     setCode(res.data);
   }

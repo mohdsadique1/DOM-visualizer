@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 
 const Feedback = () => {
 
-    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+    const [currentUser, setCurrentUser] = useState([]);
     console.log(currentUser);
 
     const feedData = async (formdata, { resetForm }) => {
@@ -13,7 +13,7 @@ const Feedback = () => {
         console.log(formdata)
         // resetForm()
 
-        const res = await fetch('http://localhost:5000/feedback/add', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback/add`, {
             method: 'POST',
             body: JSON.stringify( formdata ),
             headers: {

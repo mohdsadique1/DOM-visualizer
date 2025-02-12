@@ -36,7 +36,7 @@ const Signup = () => {
     onSubmit: (values) => {
       console.log(values);
 
-      axios.post('http://localhost:5000/user/add', values)
+      axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/add`, values)
         .then((result) => {
           toast.success('User added successfully');
           router.push('/login');

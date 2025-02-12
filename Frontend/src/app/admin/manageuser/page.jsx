@@ -8,12 +8,12 @@ const ISSERVER = typeof window === 'undefined';
 
 const Manageuser = () => {
 
-    const [userList, setUserList] = useState(JSON.parse(ISSERVER ? localStorage.getItem('user') : null));;
-    const token = ISSERVER ? localStorage.getItem('token') : null;
+    const [userList, setUserList] = useState([]);
+    const token = !ISSERVER ? localStorage.getItem('token') : null;
     const router = useRouter();
 
     const fetchUser = () => {
-        axios.get('http://localhost:5000/user/getall', {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getall`, {
             headers: {
                 'x-auth-token': token
             }
@@ -36,7 +36,7 @@ const Manageuser = () => {
     }, [])
 
     const deleteUser = (id) => {
-        axios.delete('http://localhost:5000/user/delete/' + id)
+        axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/user/delete/` + id)
             .then((result) => {
                 toast.success('User Deleted Successfully')
                 fetchUser();

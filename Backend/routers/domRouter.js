@@ -1,6 +1,7 @@
 const express = require('express');
 const Model = require('../models/domModel');
-const verifyToken = require('../middlewares/verifytoken');
+const verifyToken = require('../middlewares/verifyToken.js');
+const jwt = require('jsonwebtoken');
 const getQuotes = require('../scrapper');
 
 const router = express.Router();
