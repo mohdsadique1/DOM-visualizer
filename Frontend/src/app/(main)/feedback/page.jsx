@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 const ISSERVER = typeof window === 'undefined';
 
 const Feedback = () => {
-    
+
     const [currentUser, setCurrentUser] = useState([]);
     console.log(currentUser);
 
